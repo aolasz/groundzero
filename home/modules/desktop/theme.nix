@@ -142,7 +142,7 @@ in
         size = cfg.termFont.size;
       };
       iconTheme = {
-        name = "Mint-Y-Dark-Grey";
+        name = "Mint-Y-Grey";
         package = pkgs.cinnamon.mint-y-icons;
       };
       inherit (cfg) cursorTheme;

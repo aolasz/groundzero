@@ -1,4 +1,0 @@
-ENTRY "/" URL "/"
-ENTRY "/home/hapi" URL "/home/hapi"
-ENTRY "/run/media/hapi" URL "/run/media/hapi"
-ENTRY "/nfs/nas" URL "/nfs/nas"

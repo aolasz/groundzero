@@ -46,8 +46,8 @@ vim.opt.number = true -- absolute line number for the cursor line
 vim.opt.relativenumber = true -- and relative line number for other lines
 vim.opt.colorcolumn = '+1' -- color the column at textwidth+1
 -- Enable to conserve horizontal space
--- vim.opt.signcolumn = 'number' -- signs in the number col to conserve hspace
-vim.opt.signcolumn = 'yes' -- always display the sign column
+vim.opt.signcolumn = 'number' -- signs in the number col to conserve hspace
+-- vim.opt.signcolumn = 'yes' -- always display the sign column
 vim.opt.list = true -- show tabs, spaces, and line endings
 vim.opt.listchars = { tab = '▸ ', trail = '·' } -- invisible char substitutes
 vim.opt.updatetime = 250

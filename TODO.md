@@ -6,8 +6,6 @@
 
 ## Home Manager
 
-- Fix rootless HM environment, continue trying `nix-portable`
 - Fix SSH_AUTH_SOCK for rootless HM environments
-- Convert as many config files as feasible to '.nix' files, mainly Neovim!
+- Convert Neovim config to Nix!
 - Sync dircolors, mc colors
-- Add mc custom quick menu

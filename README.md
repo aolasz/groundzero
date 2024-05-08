@@ -193,7 +193,7 @@ Below is a table of commands for common management tasks, where environment vari
 |-----------|---------------------|
 | Collect garbage[^gc] | `[sudo] nix-collect-garbage [-d]` |
 | Switch to new OS config | `sudo nixos-rebuild {switch\|boot} --flake $FLAKE0` (`nr {switch\|boot}`) |
-| Switch to new home config | `home-manager switch --flake $FLAKE0` (`hm switch`) |
+| Switch to new home config | `home-manager switch --flake $FLAKE0 -b old` (`hm switch`) |
 | Check the config[^repodir] | `nix flake check` |
 | Format source files[^repodir] | `nix fmt` |
 | Update the lock file[^repodir] | `nix flake update --commit-lock-file` |
@@ -201,6 +201,11 @@ Below is a table of commands for common management tasks, where environment vari
 [^gc]: The `-d` option also removes GC roots such as old system  and home configurations, making it impossible to roll back to previous configs. Executing a `nixos-rebuild switch` is needed to clean up boot menu entries.
 
 [^repodir]: To be executed within the repo directory.
+
+## Additional information
+
+On customizing [Newt](https://pagure.io/newt) colors, see
+[here](./docs/newt.md).
 
 ## Troubleshooting
 

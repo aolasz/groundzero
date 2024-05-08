@@ -17,6 +17,31 @@ in
 
   xdg = {
     enable = true;
-    configFile."newt/colors".source = ../../.config/newt/colors;
+    # For more information on customizing Newt colors, see docs/newt.md
+    configFile."newt/colors".text = ''
+      root=
+      roottext=
+      helpline=
+      border=
+      window=
+      shadow=
+      title=
+      button=white,
+      actbutton=
+      compactbutton=
+      checkbox=
+      actcheckbox=white,red
+      entry=white,black
+      disentry=white,gray
+      label=black,
+      listbox=
+      actlistbox=black,
+      sellistbox=
+      actsellistbox=white,red
+      textbox=
+      acttextbox=
+      emptyscale=
+      fullscale=
+    '';
   };
 }

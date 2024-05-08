@@ -22,13 +22,10 @@ in
       v4l-utils # Video 4 Linux 2 utils to record from video sources
       gimp # raster graphics editor
       gnome.simple-scan # scanning utility
-      inkscape # vector-graphics editor
       libnotify # to manually send notifications
-      libreoffice # office suite
       pcmanfm # GUI file manager
       remmina # remote desktop app
       waypipe # remote connection utility to Wayland desktop
-      zathura # lightweight document viewer with vi-like keybindings
     ] ++ (builtins.attrValues (import ./scripts.nix { inherit pkgs; }));
 
     home.sessionVariables = {

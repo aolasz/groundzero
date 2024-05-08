@@ -7,7 +7,7 @@
     enable = true;
     historyFile = "${config.xdg.cacheHome}/bash/history";
     shellAliases = {
-      hm = ''home-manager --flake "$FLAKE0" '';
+      hm = ''home-manager --flake "$FLAKE0" -b old '';
       ls = "ls --color=auto";
       ll = "ls -lah --group-directories-first";
       grep = "grep --color=auto";

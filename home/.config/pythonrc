@@ -1,7 +1,0 @@
-# When PYTHONSTARTUP is set to the path of this file e.g. in ~/.profile, it
-# prevents the Python interpreter from creating a history file
-# ~/.python_history
-import readline
-readline.write_history_file = lambda *args: None
-
-# vim: set ft=python:

@@ -20,8 +20,18 @@
   xdg = {
     enable = true;
     configFile = {
-      "pythonrc".source = ../../.config/pythonrc;
-      "npm/npmrc".source = ../../.config/npm/npmrc;
+      # Prevent the Python interpreter from creating ~/.python_history
+      "pythonrc".text = ''
+        import readline
+        readline.write_history_file = lambda *args: None
+      '';
+      # https://wiki.archlinux.org/title/XDG_Base_Directory#Partial
+      "npm/npmrc".text = ''
+        prefix=${config.xdg.dataHome}/npm
+        cache=${config.xdg.cacheHome}/npm
+        init-module=${config.xdg.configHome}/npm/config/npm-init.js
+        logs-dir=${config.xdg.stateHome}/npm/logs
+      '';
     };
 
     userDirs = {

@@ -3,7 +3,10 @@
 {
   networking = {
     useDHCP = false;
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.scanRandMacAddress = false;
+    };
     firewall.enable = true;
 
     # Generate the hostId from the hostname
