@@ -19,7 +19,16 @@ let
       ${files}
       EOF
     '';
+
+  macSpoofScript = pkgs.writeShellScriptBin "mac-spoof" ''
+    sudo ip link set enp0s13f0u2u1 down
+    sudo ip link set enp0s13f0u2u1 address 3c:97:0e:51:74:89
+    sudo ip link set enp0s13f0u2u1 up
+  '';
 in
 {
-  home.packages = [ hmListFilesScript ];
+  home.packages = [ 
+    hmListFilesScript
+    macSpoofScript
+  ];
 }
