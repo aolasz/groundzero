@@ -147,7 +147,8 @@ in
           "audio/m3u"
           "audio/vnd.wave"
           "video/vnd.avi"
-        ] (_: [ "mpv.desktop" ]);
+        ]
+          (_: [ "mpv.desktop" ]);
       }; # mimeApps
     }; # xdg
   }; # config

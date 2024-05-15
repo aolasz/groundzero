@@ -9,7 +9,7 @@ in
     uid = 1000;
     hashedPasswordFile = "/persist/secrets/user-password";
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH5QnI50amnfCPNoW2YWZoUbzQBNgplTsfy4jgVr2RJG l15" 
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH5QnI50amnfCPNoW2YWZoUbzQBNgplTsfy4jgVr2RJG l15"
     ];
     shell = pkgs.bashInteractive;
     extraGroups = [

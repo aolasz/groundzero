@@ -39,7 +39,8 @@ in
           # "application/vsd"
           # "application/x-vsd"
           # "image/x-vsd"
-        ] (_: [ "org.inkscape.Inkscape.desktop" ]);
+        ]
+          (_: [ "org.inkscape.Inkscape.desktop" ]);
       }; # mimeApps
     }; # xdg
   }; # config

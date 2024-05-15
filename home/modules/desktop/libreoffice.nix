@@ -33,7 +33,8 @@ in
             "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" # .xlsx
             "application/vnd.openxmlformats-officedocument.spreadsheetml.template" # .xltx
             "text/csv" # .csv
-          ] (_: [ "calc.desktop" ])
+          ]
+            (_: [ "calc.desktop" ])
         ) // (
           lib.genAttrs [
             "application/rtf" # .rtf
@@ -50,7 +51,8 @@ in
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document" # .docx
             "application/vnd.openxmlformats-officedocument.wordprocessingml.template" # .dotx
             "text/rtf" # .rtf
-          ] (_: [ "writer.desktop" ])
+          ]
+            (_: [ "writer.desktop" ])
         ) // (
           lib.genAttrs [
             "application/vnd.ms-powerpoint" # .ppt
@@ -61,7 +63,8 @@ in
             "application/vnd.oasis.opendocument.presentation-template" # .otp
             "application/vnd.openxmlformats-officedocument.presentationml.presentation" # .pptx
             "application/vnd.openxmlformats-officedocument.presentationml.template" # .potx
-          ] (_: [ "impress.desktop" ])
+          ]
+            (_: [ "impress.desktop" ])
         ) // (
           lib.genAttrs [
             "application/vnd.oasis.opendocument.graphics" # .odg
@@ -75,14 +78,16 @@ in
             "image/x-emf" # .emf
             "image/wmf" # .wmf
             "image/x-wmf" # .wmf
-          ] (_: [ "draw.desktop" ])
+          ]
+            (_: [ "draw.desktop" ])
         ) // (
           lib.genAttrs [
             "application/vnd.oasis.opendocument.formula" # .odf
             "application/vnd.oasis.opendocument.formula-template" # .otf
             "text/mathml" # .mml
             "application/mathml+xml" # .mml
-          ] (_: [ "math.desktop" ])
+          ]
+            (_: [ "math.desktop" ])
         );
       }; # mimeApps
     }; # xdg

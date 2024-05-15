@@ -64,8 +64,8 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [ intel-media-driver  intel-compute-runtime ];
-      extraPackages32 = with pkgs; [ intel-media-driver  intel-compute-runtime ];
+      extraPackages = with pkgs; [ intel-media-driver intel-compute-runtime ];
+      extraPackages32 = with pkgs; [ intel-media-driver intel-compute-runtime ];
     };
   };
 

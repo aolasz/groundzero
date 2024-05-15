@@ -51,7 +51,8 @@ in
           "image/x-xbitmap" # .xbm
           "image/heif" # .heif
           "image/avif" # .heif
-        ] (_: [ "imv.desktop" ]);
+        ]
+          (_: [ "imv.desktop" ]);
       }; # mimeApps
     }; # xdg
   }; # config

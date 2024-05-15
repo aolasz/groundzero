@@ -20,7 +20,8 @@ in
           "application/postscript" # .ps .eps .ai
           "image/x-eps" # .eps
           "image/vnd.djvu" # .djvu
-        ] (_: [ "org.pwmt.zathura.desktop" ]);
+        ]
+          (_: [ "org.pwmt.zathura.desktop" ]);
       }; # mimeApps
     }; # xdg
   }; # config
