@@ -152,7 +152,7 @@ in
 
     qt = {
       enable = true;
-      platformTheme = "gtk";
+      platformTheme.name = "gtk";
     };
 
     fonts.fontconfig.enable = true;

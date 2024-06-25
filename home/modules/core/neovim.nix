@@ -13,7 +13,7 @@ let
     nvim-treesitter.withAllGrammars
     cmp-cmdline
     plenary-nvim
-    nvim-base16
+    base16-nvim
     lualine-nvim
     nvim-web-devicons
     nvim-tree-lua
