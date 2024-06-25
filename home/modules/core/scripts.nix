@@ -27,7 +27,7 @@ let
   '';
 in
 {
-  home.packages = [ 
+  home.packages = [
     hmListFilesScript
     macSpoofScript
   ];

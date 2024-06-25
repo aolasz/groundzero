@@ -10,7 +10,10 @@
       hm = ''home-manager --flake "$FLAKE0" -b old '';
       ls = "ls --color=auto";
       ll = "ls -lah --group-directories-first";
+      lr = "ll -rt";
       grep = "grep --color=auto";
+      v = "vi";
+      s = "~/dev/bash-supergenpass/supergenpass.sh";
       # Make ipython follow terminal colors
       ipython = "ipython --colors=Linux";
     };
