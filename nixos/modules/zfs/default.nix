@@ -34,7 +34,7 @@ in
       ] ++ lib.optional (cfg.arcMaxMiB > 0)
         "zfs.zfs_arc_max=${toString (cfg.arcMaxMiB * 1048576)}";
 
-      supportedFilesystems = [ "zfs" ];
+      supportedFilesystems.zfs = true;
     };
 
     environment = {
