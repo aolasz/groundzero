@@ -6,7 +6,8 @@ let
   inherit (pkgs.stdenv.hostPlatform) system;
 in
 {
-  imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
+imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
+#  imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-graphical-gnome.nix" ];
 
   environment = {
     systemPackages = [
