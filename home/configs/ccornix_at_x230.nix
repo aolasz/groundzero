@@ -12,6 +12,7 @@
     };
     gaming = {
       devilutionx.enable = true;
+      wine.enable = true;
     };
   };
 

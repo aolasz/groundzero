@@ -19,6 +19,5 @@ in
     generic.enable = lib.mkForce true;
     swaylock.enable = lib.mkForce true;
     swaywm.enable = lib.mkForce true;
-    swaywm.greetd.enable = lib.mkForce true;
   };
 }

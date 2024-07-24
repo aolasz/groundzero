@@ -1,9 +1,5 @@
 { inputs, config, pkgs, lib, ... }:
 
-let
-  inherit (pkgs.stdenv.hostPlatform) system;
-  upkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
-in
 {
   nix = {
     gc = {
@@ -11,7 +7,7 @@ in
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
-    package = upkgs.nixVersions.nix_2_21;
+    package = pkgs.nixVersions.nix_2_21;
     settings = {
       auto-optimise-store = true;
       # Follow Conventional Commits style

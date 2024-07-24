@@ -23,16 +23,16 @@
         type = lib.types.int;
         default = 1920;
         description = ''
-          Horizontal resolution of the primary display. Used for wallpaper
-          generation, scaling of UI elements and fonts.
+          Horizontal resolution of the primary display. Used for desktop
+          background image generation and scaling of UI elements & fonts.
         '';
       };
       vertical = lib.mkOption {
         type = lib.types.int;
         default = 1080;
         description = ''
-          Vertical resolution of the primary display. Used for wallpaper
-          generation, scaling of UI elements and fonts.
+          Vertical resolution of the primary display. Used for desktop
+          background image generation and scaling of UI elements & fonts.
         '';
       };
     };

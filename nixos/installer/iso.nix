@@ -27,7 +27,10 @@ in
   # Clear misleading default help
   services.getty.helpLine = lib.mkForce "";
 
-  users.users.nixos.password = "nixos";
+  users.users.nixos = {
+    password = "nixos";
+    initialHashedPassword = lib.mkForce null;
+  };
 
   isoImage = {
     isoName = lib.mkForce "nixos-${system}.iso";

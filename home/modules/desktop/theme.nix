@@ -1,11 +1,8 @@
 # Desktop theme settings
 
-{ inputs, config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  inherit (inputs) wallpapers;
-  inherit (pkgs.stdenv.hostPlatform) system;
-
   cfg = config.my.desktop.theme;
 
   getGtkPkg = mod:
@@ -14,30 +11,48 @@ let
     in
     lib.optional (pkg != null) pkg;
 
-  defaultWallpaperPkg = wallpapers.packages.${system}.hexagons.override {
-    palette = builtins.attrValues config.colorScheme.palette;
-    width = config.my.primaryDisplayResolution.horizontal;
-  };
+  backgroundPkg = let
+      inherit (config.colorScheme.palette) base00 base01 base02 base03;
+      width = config.my.primaryDisplayResolution.horizontal;
+    in pkgs.stdenvNoCC.mkDerivation {
+      name = "my-background-image";
+      src = ./hexagons.svg;
+      dontUnpack = true;
+      buildInputs = [ pkgs.librsvg ];
+      buildPhase = ''
+        dstdir="$out/share/backgrounds"
+        mkdir -p "$dstdir"
 
+        cat >style.css <<EOF
+        .stroke { stroke:#${base00} !important; }
+        .fill-0 { fill:#${base01} !important; }
+        .fill-1 { fill:#${base02} !important; }
+        .fill-2 { fill:#${base03} !important; }
+        EOF
+
+        rsvg-convert --keep-aspect-ratio --width=${toString width} \
+          --stylesheet=style.css "$src" > "$dstdir/bg.png"
+      '';
+    };
 in
 {
   options.my.desktop.theme = {
     enable = lib.mkEnableOption "custom desktop theme";
 
-    wallpaper = {
+    background = {
       path = lib.mkOption {
         type = lib.types.str;
         description = ''
-          Path to the wallpaper.
+          Path to the desktop background image.
         '';
-        default = defaultWallpaperPkg.filePath;
+        default = "${backgroundPkg}/share/backgrounds/bg.png";
       };
 
       scaling = lib.mkOption {
         type = lib.types.enum [ "stretch" "fit" "fill" "center" "tile" ];
         default = "tile";
       };
-    }; # wallpaper
+    }; # background
 
     termFont = {
       name = lib.mkOption {
@@ -47,7 +62,10 @@ in
 
       package = lib.mkOption {
         type = lib.types.package;
-        default = pkgs.nerdfonts;
+        default = (
+          # Not all Nerd fonts are needed
+          pkgs.nerdfonts.override { fonts = [ "IosevkaTerm" ]; }
+        );
       };
 
       style = lib.mkOption {

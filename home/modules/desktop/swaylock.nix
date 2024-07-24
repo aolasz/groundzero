@@ -3,7 +3,7 @@
 { config, lib, ... }:
 
 let
-  inherit (config.my.desktop.theme) wallpaper termFont topBar;
+  inherit (config.my.desktop.theme) background termFont topBar;
   cfg = config.my.desktop.swaylock;
 in
 {
@@ -15,8 +15,8 @@ in
       configFile."swaylock/config".text = with config.colorScheme.palette; ''
         show-keyboard-layout
         indicator-caps-lock
-        image=${wallpaper.path}
-        scaling=${wallpaper.scaling}
+        image=${background.path}
+        scaling=${background.scaling}
         font=${termFont.name} ${termFont.style}
         font-size=${toString (topBar.fontSize * 2)}
         indicator-radius=100

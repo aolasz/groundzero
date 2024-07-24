@@ -46,7 +46,7 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = require('configs.none-ls-nvim'),
   },
-  { 'JoshPorterDev/nvim-base16', config = require('configs.nvim-base16') },
+  { 'JoshPorterDev/nvim-base16', config = require('configs.base16-nvim') },
   { 'nvim-lualine/lualine.nvim', config = require('configs.lualine-nvim') },
   {
     'nvim-tree/nvim-tree.lua',
