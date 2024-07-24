@@ -47,27 +47,32 @@ Tip: to boot ISO images from a USB key or external SSD, my preferred method is t
         ```
 
       The resulting ISO image is then located at `./result/iso/nixos-x86_64-linux.iso`. This way, you ensure that the Linux kernel, ZFS kernel module, file system tools etc. of the installer are identical to those of the installed system.
+   - Use the following command to testrun the iso file if you can use nix:
+      ```sh
+      nix-shell -p qemu --run "qemu-system-x86_64 -m 2048 -vnc :0 -cdrom ./result/iso/nixos-x86_64-linux.iso"
+      ```
+
 
     - Otherwise just use the latest minimal NixOS ISO image.
 
-2. Boot the NixOS ISO image on the target machine.
+3. Boot the NixOS ISO image on the target machine.
 
-3. Ensure that the machine has Internet access. To connect to a Wifi network, the custom ISO enables NetworkManager and the `nmtui` tool, while in case of the generic ISO image, the [NixOS manual][installation-networking] provides guidance on using `wpa_supplicant` and `wpa_cli`.
+4. Ensure that the machine has Internet access. To connect to a Wifi network, the custom ISO enables NetworkManager and the `nmtui` tool, while in case of the generic ISO image, the [NixOS manual][installation-networking] provides guidance on using `wpa_supplicant` and `wpa_cli`.
 
-4. (If generic ISO image is used) Enable experimental features of Nix and export the `FLAKE0` environment variable to point to the online flake repo as
+5. (If generic ISO image is used) Enable experimental features of Nix and export the `FLAKE0` environment variable to point to the online flake repo as
 
     ```sh
     export NIX_CONFIG='experimental-features = nix-command flakes'
     export FLAKE0=github:aolasz/groundzero
     ```
 
-5. Enter a host-specific installer devshell of this flake as follows
+6. Enter a host-specific installer devshell of this flake as follows
 
    ```sh
    nix develop $FLAKE0#<hostname>
    ```
 
-6. Run disko using a custom script. To destroy existing data on the target disks and (re-)create file systems, run
+7. Run disko using a custom script. To destroy existing data on the target disks and (re-)create file systems, run
 
    ```sh
    my-disko --mode disko
@@ -79,7 +84,7 @@ Tip: to boot ISO images from a USB key or external SSD, my preferred method is t
    my-disko --mode mount
    ```
 
-7. Install NixOS and reboot if successful as
+8. Install NixOS and reboot if successful as
 
    ```sh
    my-install && sudo reboot
