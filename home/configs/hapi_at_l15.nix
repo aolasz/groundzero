@@ -2,10 +2,6 @@
 
 let
   inherit (pkgs.stdenv.hostPlatform) system;
-  wallpaperPkg = inputs.wallpapers.packages.${system}.gosperflakes2.override {
-    palette = builtins.attrValues config.colorScheme.palette;
-    width = config.my.primaryDisplayResolution.horizontal;
-  };
 in
 {
   imports = [ inputs.self.homeModules.default ./user.nix ];
@@ -13,7 +9,6 @@ in
   my = {
     desktop = {
       enable = true;
-      theme.wallpaper.path = wallpaperPkg.filePath;
     };
   };
 
