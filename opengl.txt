@@ -1,0 +1,1130 @@
+* [0;1mlegacyPackages.x86_64-linux.MIDIVisualizer[0m (7.0)
+  Small MIDI visualizer tool, using [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.add[32;1mOpenGL[0;1mRunpath[0m
+
+* [0;1mlegacyPackages.x86_64-linux.akkuPackages.agave[0m (0.0.1-akku.103.f95c7df)
+  Low-glycemic [32;1mOpenGL[0m hacking for R6RS Scheme
+
+* [0;1mlegacyPackages.x86_64-linux.amoeba[0m (1.1)
+  Fast-paced, polished [32;1mOpenGL[0m demonstration by Excess
+
+* [0;1mlegacyPackages.x86_64-linux.amoeba-data[0m (1.1)
+  Fast-paced, polished [32;1mOpenGL[0m demonstration by Excess (data files)
+
+* [0;1mlegacyPackages.x86_64-linux.anttweakbar[0m (1.16)
+  Add a light/intuitive GUI to [32;1mOpenGL[0m applications
+
+* [0;1mlegacyPackages.x86_64-linux.apitrace[0m (12.0)
+  Tools to trace [32;1mOpenGL[0m, [32;1mOpenGL[0m ES, Direct3D, and DirectDraw APIs
+
+* [0;1mlegacyPackages.x86_64-linux.blur-effect[0m (1.1.3)
+  Off-screen image blurring utility using [32;1mOpenGL[0m ES 3.0
+
+* [0;1mlegacyPackages.x86_64-linux.chickenPackages_5.chickenEggs.epoxy[0m (0.2.2)
+  Bindings to [32;1mOpenGL[0m and [32;1mOpenGL[0m ES through the Epoxy library
+
+* [0;1mlegacyPackages.x86_64-linux.chickenPackages_5.chickenEggs.gl-type[0m (0.4.0)
+  Freetype font rendering in [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.chickenPackages_5.chickenEggs.gl-utils[0m (0.8.0)
+  High(er) level tools for [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.chickenPackages_5.chickenEggs.glfw3[0m (0.7.1)
+  Bindings to the GLFW3 [32;1mOpenGL[0m window and event management library
+
+* [0;1mlegacyPackages.x86_64-linux.chickenPackages_5.chickenEggs.[32;1mopengl[0;1m[0m (1.21)
+  [32;1mOpenGL[0m bindings
+
+* [0;1mlegacyPackages.x86_64-linux.chickenPackages_5.chickenEggs.soil[0m (1.6.0)
+  Lightweight, simple library for loading image files into [32;1mOpenGL[0m-friendly format.
+
+* [0;1mlegacyPackages.x86_64-linux.clapper[0m (0.6.1)
+  GNOME media player built using GTK4 toolkit and powered by GStreamer with [32;1mOpenGL[0m rendering
+
+* [0;1mlegacyPackages.x86_64-linux.cudaPackages.autoAdd[32;1mOpenGL[0;1mRunpathHook[0m
+
+* [0;1mlegacyPackages.x86_64-linux.cudaPackages_10.autoAdd[32;1mOpenGL[0;1mRunpathHook[0m
+
+* [0;1mlegacyPackages.x86_64-linux.cudaPackages_11.autoAdd[32;1mOpenGL[0;1mRunpathHook[0m
+
+* [0;1mlegacyPackages.x86_64-linux.dreamchess[0m (0.3.0)
+  [32;1mOpenGL[0m Chess Game
+
+* [0;1mlegacyPackages.x86_64-linux.driversi686Linux.glxinfo[0m (8.4.0)
+  Test utilities for [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.driversi686Linux.libvdpau-va-gl[0m (0.4.2)
+  VDPAU driver with [32;1mOpenGL[0m/VAAPI backend
+
+* [0;1mlegacyPackages.x86_64-linux.epoxy[0m (1.5.10)
+  Library for handling [32;1mOpenGL[0m function pointer management
+
+* [0;1mlegacyPackages.x86_64-linux.esshader[0m (2020-08-09)
+  Offline ShaderToy-compatible GLSL shader viewer using [32;1mOpenGL[0m ES 2.0
+
+* [0;1mlegacyPackages.x86_64-linux.forge[0m (1.0.8)
+  [32;1mOpenGL[0m interop library that can be used with ArrayFire or any other application using CUDA or OpenCL compute backend
+
+* [0;1mlegacyPackages.x86_64-linux.freeglut[0m (3.4.0)
+  Create and manage windows containing [32;1mOpenGL[0m contexts
+
+* [0;1mlegacyPackages.x86_64-linux.ftgl[0m (2.4.0)
+  Font rendering library for [32;1mOpenGL[0m applications
+
+* [0;1mlegacyPackages.x86_64-linux.furmark[0m (2.3.0.0)
+  [32;1mOpenGL[0m and Vulkan Benchmark and Stress Test
+
+* [0;1mlegacyPackages.x86_64-linux.gl-gsync-demo[0m (2020-12-27)
+  Very basic [32;1mOpenGL[0m demo for testing NVIDIA's G-SYNC technology on Linux
+
+* [0;1mlegacyPackages.x86_64-linux.gl2ps[0m (1.4.2)
+  [32;1mOpenGL[0m to PostScript printing library
+
+* [0;1mlegacyPackages.x86_64-linux.gl3w[0m (0-unstable-2023-10-10)
+  Simple [32;1mOpenGL[0m core profile loading
+
+* [0;1mlegacyPackages.x86_64-linux.glava[0m (1.6.3)
+  [32;1mOpenGL[0m audio spectrum visualizer 
+
+* [0;1mlegacyPackages.x86_64-linux.glbinding[0m (3.3.0)
+  C++ binding for the [32;1mOpenGL[0m API, generated using the gl.xml specification
+
+* [0;1mlegacyPackages.x86_64-linux.glew[0m (2.2.0)
+  [32;1mOpenGL[0m extension loading library for C/C++
+
+* [0;1mlegacyPackages.x86_64-linux.glew-egl[0m (2.2.0)
+  [32;1mOpenGL[0m extension loading library for C/C++
+
+* [0;1mlegacyPackages.x86_64-linux.glew110[0m (1.10.0)
+  [32;1mOpenGL[0m extension loading library for C(++)
+
+* [0;1mlegacyPackages.x86_64-linux.glfw[0m (3.4)
+  Multi-platform library for creating [32;1mOpenGL[0m contexts and managing input, including keyboard, mouse, joystick and time
+
+* [0;1mlegacyPackages.x86_64-linux.glfw-wayland[0m (3.4)
+  Multi-platform library for creating [32;1mOpenGL[0m contexts and managing input, including keyboard, mouse, joystick and time
+
+* [0;1mlegacyPackages.x86_64-linux.glfw-wayland-minecraft[0m (2023-06-01)
+  Multi-platform library for creating [32;1mOpenGL[0m contexts and managing input, including keyboard, mouse, joystick and time - with patches to support Minecraft on Wayland
+
+* [0;1mlegacyPackages.x86_64-linux.glfw2[0m (2.7.9)
+  Multi-platform library for creating [32;1mOpenGL[0m contexts and managing input, including keyboard, mouse, joystick and time
+
+* [0;1mlegacyPackages.x86_64-linux.glfw3[0m (3.4)
+  Multi-platform library for creating [32;1mOpenGL[0m contexts and managing input, including keyboard, mouse, joystick and time
+
+* [0;1mlegacyPackages.x86_64-linux.glm[0m (1.0.1)
+  [32;1mOpenGL[0m Mathematics library for C++
+
+* [0;1mlegacyPackages.x86_64-linux.glmark2[0m (2023.01)
+  [32;1mOpenGL[0m (ES) 2.0 benchmark
+
+* [0;1mlegacyPackages.x86_64-linux.glpng[0m (1.46)
+  PNG loader library for [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.glsl_analyzer[0m (1.4.5)
+  Language server for GLSL ([32;1mOpenGL[0m Shading Language)
+
+* [0;1mlegacyPackages.x86_64-linux.glui[0m (2.37)
+  User interface library using [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.glxinfo[0m (8.4.0)
+  Test utilities for [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.gnome2.gtkglext[0m (2019-12-19)
+  GtkGLExt, an [32;1mOpenGL[0m extension to GTK
+
+* [0;1mlegacyPackages.x86_64-linux.gravit[0m (0.5.1)
+  Beautiful [32;1mOpenGL[0m-based gravity simulator
+
+* [0;1mlegacyPackages.x86_64-linux.guile-chickadee[0m (0.10.0)
+  Game development toolkit for Guile Scheme with SDL2 and [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.guile-[32;1mopengl[0;1m[0m (0.2.0)
+  Guile bindings for the [32;1mOpenGL[0m graphics API
+
+* [0;1mlegacyPackages.x86_64-linux.gzdoom[0m (4.12.2)
+  Modder-friendly [32;1mOpenGL[0m and Vulkan source port based on the DOOM engine
+
+* [0;1mlegacyPackages.x86_64-linux.kitty[0m (0.35.2)
+  Modern, hackable, featureful, [32;1mOpenGL[0m based terminal emulator
+
+* [0;1mlegacyPackages.x86_64-linux.kmscube[0m (2023-09-25)
+  Example [32;1mOpenGL[0m app using KMS/GBM
+
+* [0;1mlegacyPackages.x86_64-linux.libGLU[0m (9.0.3)
+  [32;1mOpenGL[0m utility library
+
+* [0;1mlegacyPackages.x86_64-linux.libepoxy[0m (1.5.10)
+  Library for handling [32;1mOpenGL[0m function pointer management
+
+* [0;1mlegacyPackages.x86_64-linux.libglut[0m (3.4.0)
+  Create and manage windows containing [32;1mOpenGL[0m contexts
+
+* [0;1mlegacyPackages.x86_64-linux.lib[32;1mopengl[0;1mrecorder[0m (2020-08-13)
+  Library allowing Optional async readback [32;1mOpenGL[0m frame buffer with optional audio recording
+
+* [0;1mlegacyPackages.x86_64-linux.libsForQt5.libqglviewer[0m (2.9.1)
+  C++ library based on Qt that eases the creation of [32;1mOpenGL[0m 3D viewers
+
+* [0;1mlegacyPackages.x86_64-linux.libsForQt5.mapbox-gl-native[0m (1.6.0)
+  Interactive, thoroughly customizable maps in native Android, iOS, macOS, Node.js, and Qt applications, powered by vector tiles and [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.libstrangle[0m (202202022)
+  Frame rate limiter for Linux/[32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.libvdpau-va-gl[0m (0.4.2)
+  VDPAU driver with [32;1mOpenGL[0m/VAAPI backend
+
+* [0;1mlegacyPackages.x86_64-linux.mangohud[0m (0.7.2)
+  Vulkan and [32;1mOpenGL[0m overlay for monitoring FPS, temperatures, CPU/GPU load and more
+
+* [0;1mlegacyPackages.x86_64-linux.mednafen[0m (1.32.1)
+  Portable, CLI-driven, SDL+[32;1mOpenGL[0m-based, multi-system emulator
+
+* [0;1mlegacyPackages.x86_64-linux.mesa-demos[0m (9.0.0)
+  Collection of demos and test programs for [32;1mOpenGL[0m and Mesa
+
+* [0;1mlegacyPackages.x86_64-linux.mesa_glu[0m (9.0.3)
+  [32;1mOpenGL[0m utility library
+
+* [0;1mlegacyPackages.x86_64-linux.midivisualizer[0m (7.0)
+  Small MIDI visualizer tool, using [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.mlx42[0m (2.3.4)
+  Simple cross-platform graphics library that uses GLFW and [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.obs-studio-plugins.obs-vkcapture[0m (1.5.1)
+  OBS Linux Vulkan/[32;1mOpenGL[0m game capture
+
+* [0;1mlegacyPackages.x86_64-linux.ocamlPackages.lablgl[0m (1.07)
+  [32;1mOpenGL[0m bindings for ocaml
+
+* [0;1mlegacyPackages.x86_64-linux.pangolin[0m (0.9.1)
+  Lightweight portable rapid development library for managing [32;1mOpenGL[0m display / interaction and abstracting video input
+
+* [0;1mlegacyPackages.x86_64-linux.perl536Packages.[32;1mOpenGL[0;1m[0m (0.70)
+  Perl [32;1mOpenGL[0m bindings
+
+* [0;1mlegacyPackages.x86_64-linux.perl538Packages.[32;1mOpenGL[0;1m[0m (0.70)
+  Perl [32;1mOpenGL[0m bindings
+
+* [0;1mlegacyPackages.x86_64-linux.perlPackages.[32;1mOpenGL[0;1m[0m (0.70)
+  Perl [32;1mOpenGL[0m bindings
+
+* [0;1mlegacyPackages.x86_64-linux.piglit[0m (2020-10-23)
+  [32;1mOpenGL[0m test suite, and test-suite runner
+
+* [0;1mlegacyPackages.x86_64-linux.plasma5Packages.libqglviewer[0m (2.9.1)
+  C++ library based on Qt that eases the creation of [32;1mOpenGL[0m 3D viewers
+
+* [0;1mlegacyPackages.x86_64-linux.plasma5Packages.mapbox-gl-native[0m (1.6.0)
+  Interactive, thoroughly customizable maps in native Android, iOS, macOS, Node.js, and Qt applications, powered by vector tiles and [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.python311Packages.glcontext[0m (2.5.0)
+  [32;1mOpenGL[0m implementation for ModernGL
+
+* [0;1mlegacyPackages.x86_64-linux.python311Packages.pyftgl[0m (0.4b)
+  Python bindings for FTGL (FreeType for [32;1mOpenGL[0m)
+
+* [0;1mlegacyPackages.x86_64-linux.python311Packages.pyglm[0m (2.7.1-rev1)
+  [32;1mOpenGL[0m Mathematics (GLM) library for Python written in C++
+
+* [0;1mlegacyPackages.x86_64-linux.python311Packages.py[32;1mopengl[0;1m[0m (3.1.7)
+  Py[32;1mOpenGL[0m, the Python [32;1mOpenGL[0m bindings
+
+* [0;1mlegacyPackages.x86_64-linux.python311Packages.py[32;1mopengl[0;1m-accelerate[0m (3.1.7)
+  This set of C (Cython) extensions provides acceleration of common operations for slow points in Py[32;1mOpenGL[0m 3.x
+
+* [0;1mlegacyPackages.x86_64-linux.python311Packages.pyrender[0m (0.1.45)
+  Easy-to-use glTF 2.0-compliant [32;1mOpenGL[0m renderer for visualization of 3D scenes
+
+* [0;1mlegacyPackages.x86_64-linux.python312Packages.glcontext[0m (2.5.0)
+  [32;1mOpenGL[0m implementation for ModernGL
+
+* [0;1mlegacyPackages.x86_64-linux.python312Packages.pyftgl[0m (0.4b)
+  Python bindings for FTGL (FreeType for [32;1mOpenGL[0m)
+
+* [0;1mlegacyPackages.x86_64-linux.python312Packages.pyglm[0m (2.7.1-rev1)
+  [32;1mOpenGL[0m Mathematics (GLM) library for Python written in C++
+
+* [0;1mlegacyPackages.x86_64-linux.python312Packages.py[32;1mopengl[0;1m[0m (3.1.7)
+  Py[32;1mOpenGL[0m, the Python [32;1mOpenGL[0m bindings
+
+* [0;1mlegacyPackages.x86_64-linux.python312Packages.py[32;1mopengl[0;1m-accelerate[0m (3.1.7)
+  This set of C (Cython) extensions provides acceleration of common operations for slow points in Py[32;1mOpenGL[0m 3.x
+
+* [0;1mlegacyPackages.x86_64-linux.python312Packages.pyrender[0m (0.1.45)
+  Easy-to-use glTF 2.0-compliant [32;1mOpenGL[0m renderer for visualization of 3D scenes
+
+* [0;1mlegacyPackages.x86_64-linux.quesoglc[0m (0.7.2)
+  Free implementation of the [32;1mOpenGL[0m Character Renderer
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-cffi-gtk-[32;1mopengl[0;1m-demo[0m (20230214-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-3dfx__multisample[0m (3dfx_multisample-20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-3dfx__tbuffer[0m (3dfx_tbuffer-20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-3dfx__texture__compression__fxt1[0m (3dfx_texture_compression_fxt1-20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__blend__minmax__factor[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__depth__clamp__separate[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__draw__buffers__blend[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__multi__draw__indirect[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__name__gen__delete[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__performance__monitor[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__sample__positions[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__seamless__cubemap__per__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-amd__vertex__shader__tesselator[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__aux__depth__stencil[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__client__storage[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__element__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__fence[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__float__pixels[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__flush__buffer__range[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__object__purgeable[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__rgb__422[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__row__bytes[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__specular__vector[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__texture__range[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__transform__hint[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__vertex__array__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__vertex__array__range[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__vertex__program__evaluators[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-apple__ycbcr__422[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__blend__func__extended[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__color__buffer__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__copy__buffer[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__depth__buffer__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__depth__clamp[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__depth__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__draw__buffers[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__draw__buffers__blend[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__draw__elements__base__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__draw__indirect[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__draw__instanced[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__es2__compatibility[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__fragment__program[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__fragment__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__framebuffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__framebuffer__object__deprecated[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__framebuffer__srgb[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__geometry__shader4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__get__program__binary[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__gpu__shader5[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__gpu__shader__fp64[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__half__float__pixel[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__half__float__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__imaging[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__imaging__deprecated[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__instanced__arrays[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__map__buffer__range[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__matrix__palette[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__multitexture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__occlusion__query[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__occlusion__query2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__pixel__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__point__parameters[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__point__sprite[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__provoking__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__robustness[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__sample__shading[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__sampler__objects[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__seamless__cube__map[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__separate__shader__objects[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__shader__objects[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__shader__subroutine[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__shading__language__100[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__shading__language__include[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__shadow[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__shadow__ambient[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__tessellation__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__border__clamp[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__buffer__object__rgb32[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__compression[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__compression__bptc[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__compression__rgtc[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__cube__map[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__cube__map__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__env__combine[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__env__dot3[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__gather[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__mirrored__repeat[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__rectangle[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__rg[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__rgb10__a2ui[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__texture__swizzle[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__timer__query[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__transform__feedback2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__transpose__matrix[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__uniform__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__array__bgra[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__array__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__attrib__64bit[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__blend[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__program[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__vertex__type__2__10__10__10__rev[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__viewport__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-arb__window__pos[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__draw__buffers[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__element__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__envmap__bumpmap[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__fragment__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__map__object__buffer[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__meminfo[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__pixel__format__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__pn__triangles[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__separate__stencil[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__text__fragment__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__texture__env__combine3[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__texture__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__texture__mirror__once[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__vertex__array__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__vertex__attrib__array__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ati__vertex__streams[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-core[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__422__pixels[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__abgr[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__bgra[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__bindable__uniform[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__blend__color[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__blend__equation__separate[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__blend__func__separate[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__blend__minmax[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__blend__subtract[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__clip__volume__hint[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__cmyka[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__color__subtable[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__compiled__vertex__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__convolution[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__coordinate__frame[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__copy__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__cull__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__depth__bounds__test[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__direct__state__access[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__draw__buffers2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__draw__instanced[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__draw__range__elements[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__fog__coord[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__framebuffer__blit[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__framebuffer__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__framebuffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__framebuffer__srgb[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__geometry__shader4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__gpu__program__parameters[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__gpu__shader4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__histogram[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__index__array__formats[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__index__func[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__index__material[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__light__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__multi__draw__arrays[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__packed__depth__stencil[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__packed__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__packed__pixels[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__paletted__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__pixel__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__pixel__transform[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__point__parameters[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__polygon__offset[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__provoking__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__secondary__color[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__separate__shader__objects[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__separate__specular__color[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__shader__image__load__store[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__stencil__clear__tag[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__stencil__two__side[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__stencil__wrap[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__subtexture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture3d[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__compression__latc[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__compression__rgtc[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__compression__s3tc[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__cube__map[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__env__combine[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__env__dot3[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__filter__anisotropic[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__integer[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__lod__bias[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__mirror__clamp[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__perturb__normal[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__shared__exponent[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__snorm[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__srgb[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__srgb__decode[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__texture__swizzle[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__timer__query[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__transform__feedback[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__vertex__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__vertex__array__bgra[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__vertex__attrib__64bit[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__vertex__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ext__vertex__weighting[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-gremedy__frame__terminator[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-gremedy__string__marker[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-hp__convolution__border__modes[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-hp__image__transform[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-hp__occlusion__test[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-hp__texture__lighting[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ibm__cull__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ibm__multimode__draw__arrays[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ibm__rasterpos__clip[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ibm__texture__mirrored__repeat[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ibm__vertex__array__lists[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ingr__blend__func__separate[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ingr__color__clamp[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-ingr__interlace__read[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-intel__parallel__arrays[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__pack__invert[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__packed__depth__stencil[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__program__debug[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__resize__buffers[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__shader__debug[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__trace[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__window__pos[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesa__ycbcr__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-mesax__texture__stack[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__conditional__render[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__copy__depth__to__color[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__copy__image[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__depth__buffer__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__depth__clamp[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__evaluators[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__explicit__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__fence[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__float__buffer[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__fog__distance[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__fragment__program[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__fragment__program2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__framebuffer__multisample__coverage[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__geometry__program4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__gpu__program4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__gpu__program5[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__gpu__shader5[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__half__float[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__light__max__exponent[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__multisample__coverage[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__multisample__filter__hint[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__occlusion__query[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__packed__depth__stencil[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__parameter__buffer__object[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__pixel__data__range[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__point__sprite[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__present__video[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__primitive__restart[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__register__combiners[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__register__combiners2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__shader__buffer__load[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__shader__buffer__store[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__tessellation__program5[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texgen__emboss[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texgen__reflection[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__barrier[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__env__combine4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__expand__normal[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__rectangle[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__shader[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__shader2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__texture__shader3[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__transform__feedback[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__transform__feedback2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__array__range[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__array__range2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__attrib__integer__64bit[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__buffer__unified__memory[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__program[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__program2__option[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__program3[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-nv__vertex__program4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-oes__read__format[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-oml__interlace[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-oml__resample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-oml__subsample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-pgi__misc__hints[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-pgi__vertex__hints[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-rend__screen__coordinates[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-s3__s3tc[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgi__color__table[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgi__depth__pass__instrument[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__detail__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__fog__function[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__multisample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__pixel__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__point__parameters[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__sharpen__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__texture4d[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__texture__color__mask[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__texture__filter4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgis__texture__select[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__async[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__depth__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__flush__raster[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__fog__scale[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__fragment__lighting[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__framezoom[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__igloo__interface[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__instruments[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__line__quality__hint[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__list__priority[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__pixel__texture[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__polynomial__ffd[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__reference__plane[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__resample[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__scalebias__hint[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__shadow[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__shadow__ambient[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__slim[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__sprite[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__tag__sample__buffer[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__texture__coordinate__clamp[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__texture__lod__bias[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__texture__multi__buffer[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sgix__ycrcba[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sun__convolution__border__modes[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sun__global__alpha[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sun__mesh__array[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sun__slice__accum[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sun__triangle__list[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sun__vertex[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-sunx__constant__data[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__1__0[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__1__1[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__1__2[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__1__3[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__1__4[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__1__5[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__2__0[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-version__2__1[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-win__phong__shading[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-glfw-[32;1mopengl[0;1m-win__specular__fog[0m (20150302-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.cl-[32;1mopengl[0;1m[0m (20191130-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.lem-[32;1mopengl[0;1m[0m (20200427-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.lispbuilder-[32;1mopengl[0;1m-1-1[0m (1-1-20210807-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.lispbuilder-[32;1mopengl[0;1m-examples[0m (20210807-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.qtools-[32;1mopengl[0;1m[0m (20230214-git)
+
+* [0;1mlegacyPackages.x86_64-linux.sbclPackages.qt[32;1mopengl[0;1m[0m (20210531-git)
+
+* [0;1mlegacyPackages.x86_64-linux.shadershark[0m (0.1)
+  [32;1mOpenGL[0m/X11 application for GNU/Linux consisting of a single window that shows simple 3D scene of a textured rectangle with applied vertex and fragment shaders (GLSL)
+
+* [0;1mlegacyPackages.x86_64-linux.soil[0m (2020-01-04)
+  Simple [32;1mOpenGL[0m Image Library
+
+* [0;1mlegacyPackages.x86_64-linux.twilight[0m (2018-04-19)
+  Redo of IRIX twilight backdrop in old school [32;1mOpenGL[0m
+
+* [0;1mlegacyPackages.x86_64-linux.vcg[0m (2023.12)
+  C++ library for manipulation, processing and displaying with [32;1mOpenGL[0m of triangle and tetrahedral meshes
+
+* [0;1mlegacyPackages.x86_64-linux.waffle[0m (1.8.0)
+  Cross-platform C library that allows one to defer selection of an [32;1mOpenGL[0m API and window system until runtime
+
+* [0;1mlegacyPackages.x86_64-linux.wine[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine-staging[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wine-wayland[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.base[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.full[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.minimal[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.stable[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.stableFull[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.staging[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.stagingFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.unstable[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.unstableFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.wayland[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wine64Packages.waylandFull[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.base[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.full[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.minimal[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.stable[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.stableFull[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.staging[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.stagingFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.unstable[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.unstableFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.wayland[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.winePackages.waylandFull[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWayland[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.base[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.full[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.minimal[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.stable[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.stableFull[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.staging[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.stagingFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.unstable[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.unstableFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.wayland[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWow64Packages.waylandFull[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.base[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.full[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.minimal[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.stable[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.stableFull[0m (9.0)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.staging[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.stagingFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix (with staging patches)
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.unstable[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.unstableFull[0m (9.12)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.wayland[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.wineWowPackages.waylandFull[0m (8.2)
+  Open Source implementation of the Windows API on top of X, [32;1mOpenGL[0m, and Unix
+
+* [0;1mlegacyPackages.x86_64-linux.xorg_sys_[32;1mopengl[0;1m[0m (3)

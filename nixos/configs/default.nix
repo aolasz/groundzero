@@ -3,6 +3,7 @@
 let
   hosts = [
     # "b550"
+    "box"
     # "c236m"
     # "hypervvm"
     "l15"
