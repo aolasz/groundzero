@@ -53,12 +53,16 @@ in
       systemd.enable = true;
       wrapperFeatures.gtk = true;
       xwayland = true;
+      # extraOptions = [ "--unsupported-gpu" ];
       extraSessionCommands = ''
         export XDG_CURRENT_DESKTOP=sway
         # https://github.com/swaywm/sway/issues/595
         export _JAVA_AWT_WM_NONREPARENTING=1
         export DESKTOP_SESSION=gnome
         export SSH_AUTH_SOCK
+        # nvidia hacks:
+        # export WLR_NO_HARDWARE_CURSORS=1
+        # export WLR_DRM_DEVICES=/dev/dri/card0
       '';
       config = rec {
         fonts = {

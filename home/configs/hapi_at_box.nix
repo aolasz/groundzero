@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 let
   inherit (pkgs.stdenv.hostPlatform) system;
@@ -10,6 +10,14 @@ in
     desktop = {
       enable = true;
     };
+  };
+
+  wayland.windowManager.sway = {
+    extraSessionCommands = lib.mkAfter ''
+      export WLR_NO_HARDWARE_CURSORS=1
+      export WLR_DRM_DEVICES=/dev/dri/card0
+    '';
+    extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
   };
 
   home.stateVersion = "24.05";
