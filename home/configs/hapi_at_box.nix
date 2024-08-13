@@ -10,6 +10,7 @@ in
     desktop = {
       enable = true;
     };
+    gaming.wine.enable = true;
   };
 
   wayland.windowManager.sway = {
