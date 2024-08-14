@@ -18,6 +18,7 @@ in
     ./swaywm.nix
     ./theme.nix
     ./zathura.nix
+    ./freetube.nix
   ];
 
   options.my.desktop = with lib; {
@@ -40,5 +41,6 @@ in
     libreOffice.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     zathura.enable = lib.mkDefault true;
+    freetube.enable = lib.mkDefault true;
   };
 }

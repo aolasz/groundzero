@@ -17,6 +17,7 @@ in
     extraSessionCommands = lib.mkAfter ''
       export WLR_NO_HARDWARE_CURSORS=1
       export WLR_DRM_DEVICES=/dev/dri/card0
+      export NIXOS_OZONE_WL=1
     '';
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
   };
