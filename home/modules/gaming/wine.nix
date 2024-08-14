@@ -13,6 +13,7 @@ in
       wineWowPackages.waylandFull
       # wineWowPackages.full
       wineWowPackages.fonts
+      winetricks
     ];
   };
 }

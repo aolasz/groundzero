@@ -7,9 +7,9 @@ in
   imports = [ inputs.self.homeModules.default ./user.nix ];
 
   my = {
-    desktop = {
-      enable = true;
-    };
+    primaryDisplayResolution = { horizontal = 1920; vertical = 1080; };
+    desktop.enable = true;
+    gaming.wine.enable = true;
   };
 
   home.stateVersion = "23.11";
