@@ -48,7 +48,10 @@
       # kernelModules = [ "i915" ];
     };
     kernelModules = [ "kvm-amd" ];
-    loader.systemd-boot.enable = true;
+    loader.systemd-boot = {
+      enable = true;
+      consoleMode = "max";
+    };
   };
 
   # neededForBoot flag is not settable from disko
