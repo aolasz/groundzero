@@ -14,6 +14,7 @@
       grep = "grep --color=auto";
       v = "vi";
       s = "~/dev/bash-supergenpass/supergenpass.sh";
+      neofetch = "fastfetch";
       # Make ipython follow terminal colors
       ipython = "ipython --colors=Linux";
     };
@@ -52,8 +53,8 @@
     settings = {
       command_timeout = 1000;
       character = {
-        success_symbol = "[>](bold green)";
-        error_symbol = "[>](bold red)";
+        success_symbol = "[λ](bold green)";
+        error_symbol = "[λ](bold red)";
       };
       directory = {
         truncation_length = 255;
