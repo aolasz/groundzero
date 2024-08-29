@@ -19,7 +19,27 @@ in
       export WLR_DRM_DEVICES=/dev/dri/card0
       export NIXOS_OZONE_WL=1
     '';
+    
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
+    # You can find these names by `running swaymsg -t get_outputs` in a terminal
+    # when Sway is running.
+    extraConfig = lib.mkAfter ''
+      output "Unknown-1" {
+          mode 2560x1440@60Hz
+              position 0,0
+          }
+          
+      output "Unknown-2" {
+          mode 1920x1080@60Hz
+          position -1920,0
+      }
+          
+      output * mirror none
+      
+      workspace 1 output "Unknown-1"
+      workspace 2 output "Unknown-2"
+      resolution 1920x1080 position 0,0
+    '';
   };
 
   home.stateVersion = "24.05";
