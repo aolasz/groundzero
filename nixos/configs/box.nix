@@ -100,6 +100,8 @@
   # Load NVIDIA driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
+  services.xserver.displayManager.autoLogin = true;
+
   nixpkgs.hostPlatform = "x86_64-linux";
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "schedutil";
