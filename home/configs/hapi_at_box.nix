@@ -26,19 +26,16 @@ in
     extraConfig = lib.mkAfter ''
       output "Unknown-1" {
           mode 2560x1440@60Hz
-              position 0,0
-          }
-          
+          position 0,0
+      }
+
       output "Unknown-2" {
           mode 1920x1080@60Hz
           position -1920,0
       }
-          
-      output * mirror none
-      
+
       workspace 1 output "Unknown-1"
       workspace 2 output "Unknown-2"
-      resolution 1920x1080 position 0,0
     '';
   };
 
