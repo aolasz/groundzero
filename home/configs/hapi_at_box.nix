@@ -11,9 +11,20 @@ in
       enable = true;
     };
     gaming.wine.enable = true;
+    gaming.lutris.enable = true;
+  };
+
+  home.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    # WLR_NO_HARDWARE_CURSORS = "1";
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+    WINEARCH = "win64";
   };
 
   wayland.windowManager.sway = {
+
     extraSessionCommands = lib.mkAfter ''
       export WLR_NO_HARDWARE_CURSORS=1
       export WLR_DRM_DEVICES=/dev/dri/card0
