@@ -139,6 +139,24 @@
           }; # partitions
         }; # content
       }; # system
+      nvme1 = {
+        type = "disk";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_970_PRO_1TB_S462NF0M606657T";
+        content = {
+          type = "gpt";
+          partitions = {
+            nvme1n1p1 = {
+              name = "nvme1";
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/mnt/nvme1";
+              };
+            };
+          }; # partitions
+        }; # content
+      }; # nvme1
     }; # disk
     zpool = {
       rpool = {
