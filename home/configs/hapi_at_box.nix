@@ -1,44 +1,34 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, lib, ... }:
 
-let
-  inherit (pkgs.stdenv.hostPlatform) system;
-in
 {
   imports = [ inputs.self.homeModules.default ./user.nix ];
 
   my = {
-    desktop = {
-      enable = true;
-    };
+    desktop.enable = true;
     gaming.wine.enable = true;
     gaming.lutris.enable = true;
     gaming.steam.enable = true;
+    gaming.protonup.enable = true;
   };
 
   home.sessionVariables = {
-     home.sessionVariables = {
-              LIBVA_DRIVER_NAME = "nvidia";
-              XDG_SESSION_TYPE = "wayland";
-              GBM_BACKEND = "nvidia-drm";
-              __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-              WLR_NO_HARDWARE_CURSORS = "1";
-              __NV_PRIME_RENDER_OFFLOAD = "1";
-            };         LIBVA_DRIVER_NAME = "nvidia";
-              XDG_SESSION_TYPE = "wayland";
-              GBM_BACKEND = "nvidia-drm";
-              __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-              WLR_NO_HARDWARE_CURSORS = "1";
-              __NV_PRIME_RENDER_OFFLOAD = "1";
-            };
+    LIBVA_DRIVER_NAME = "nvidia";
+    XDG_SESSION_TYPE = "wayland";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+  };
+
   wayland.windowManager.sway = {
     extraSessionCommands = lib.mkAfter ''
       export WLR_NO_HARDWARE_CURSORS=1
       export WLR_DRM_DEVICES=/dev/dri/card0
       export NIXOS_OZONE_WL=1
     '';
-    
+
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
-    # You can find these names by `running swaymsg -t get_outputs` in a terminal
+    # You can find these names by running `swaymsg -t get_outputs` in a terminal
     # when Sway is running.
     extraConfig = lib.mkAfter ''
       output "Unknown-1" {
