@@ -7,7 +7,6 @@
     desktop.enable = true;
     gaming.wine.enable = true;
     gaming.lutris.enable = true;
-    gaming.steam.enable = true;
     gaming.protonup.enable = true;
   };
 

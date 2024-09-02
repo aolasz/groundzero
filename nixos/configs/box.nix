@@ -19,6 +19,7 @@
       enable = true;
       brotherMfp.enable = true;
     };
+    gaming.steam.enable = true;
     network = {
       interfaces = {
         wired = { wired0 = "a8:a1:59:6a:c5:5d"; };
