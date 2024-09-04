@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, lib, pkgs, ... }:
 
 {
   imports = [ inputs.self.homeModules.default ./user.nix ];
@@ -10,20 +10,53 @@
     gaming.protonup.enable = true;
   };
 
-  home.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    __NV_PRIME_RENDER_OFFLOAD = "1";
+  home = {
+    packages = with pkgs; [
+      vulkan-tools
+      vulkan-loader
+      vulkan-validation-layers
+      libva-utils
+      #vdpauinfo
+      #libvdpau-va-gl
+      #egl-wayland
+      #wgpu-utils
+      #mesa
+      libglvnd
+      #nvtopPackages.full
+      #nvitop
+      libGL
+      glxinfo
+    ];
+    sessionVariables = {
+      LIBVA_DRIVER_NAME = "nvidia";
+      XDG_SESSION_TYPE = "wayland";
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      WLR_NO_HARDWARE_CURSORS = "1";
+       __NV_PRIME_RENDER_OFFLOAD = "1";
+      VK_ICD_FILENAMES =
+        "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
+      NVK_USE_MESA_OVERLAY_LAYER = "0";
+      LIBGL_ALWAYS_INDIRECT = "0";
+      NVD_BACKEND = "direct";
+    };
+    shellAliases = {
+      # signal-desktop = "env -u WAYLAND_DISPLAY signal-desktop";
+    };
   };
 
   wayland.windowManager.sway = {
     extraSessionCommands = lib.mkAfter ''
-      export WLR_NO_HARDWARE_CURSORS=1
-      export WLR_DRM_DEVICES=/dev/dri/card0
       export NIXOS_OZONE_WL=1
+      export WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+      # export WLR_DRM_DEVICES=/dev/dri/card1
+      export WLR_NO_HARDWARE_CURSORS=1
+      export WLR_RENDERER=vulkan
+      export LIBVA_DRIVER_NAME=nvidia
+      export XDG_SESSION_TYPE=wayland
+      export GBM_BACKEND=nvidia-drm
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export XWAYLAND_NO_GLAMOR=1
     '';
 
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];

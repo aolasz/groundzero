@@ -38,17 +38,29 @@
         "ahci"
         "k10temp"
         "nvme"
-        "rtsx_pci_sdmmc"
+        #"rtsx_pci_sdmmc"
         "sd_mod"
-        "sdhci_pci"
-        "thunderbolt"
+        #"sdhci_pci"
+        #"thunderbolt"
         "usb_storage"
         "usbhid"
         "xhci_pci"
       ];
-      # kernelModules = [ "i915" ];
+      # kernelModules = [ "nvidia" ];
     };
-    kernelModules = [ "kvm-amd" ];
+    blacklistedKernelModules = [ "nouveau" ];
+    kernelModules = [
+      "kvm-amd"
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ];
+    kernelParams = [
+      "nvidia_drm.fbdev=1"
+      "nvidia-drm.modeset=1"
+    ];
+    #extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     loader.systemd-boot = {
       enable = true;
       consoleMode = "max";
@@ -71,28 +83,44 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        libglvnd
-        egl-wayland
-        vulkan-tools
-      ];
-      extraPackages32 = with pkgs; [
-        libglvnd
-        egl-wayland
-        vulkan-tools
+        (buildEnv {
+          name = "nvidia-vaapi-drivers";
+          paths = [
+            vaapiVdpau
+            libvdpau-va-gl
+            nvidia-vaapi-driver
+            #  libglvnd
+            #  egl-wayland
+            #  vulkan-tools
+            #  vulkan-loader
+            #  vulkan-validation-layers
+          ];
+          pathsToLink = [ "/lib" "/lib32" "/share" ];
+        })
       ];
     };
     nvidia = {
       modesetting.enable = true;
       open = false;
-      nvidiaSettings = true;
+      nvidiaSettings = false;
+      powerManagement.enable = true;
+      powerManagement.finegrained = false;
+      #forceFullCompositionPipeline = true;
+      nvidiaPersistenced = true;
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/linux/nvidia-x11/default.nix
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "555.58.02";
-        sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
-        sha256_aarch64 = "sha256-wb20isMrRg8PeQBU96lWJzBMkjfySAUaqt4EgZnhyF8=";
-        openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
-        settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
-        persistencedSha256 = "sha256-a1D7ZZmcKFWfPjjH1REqPM5j/YLWKnbkP9qfRyIyxAw=";
+        version = "560.35.03";
+        sha256_64bit = "sha256-8pMskvrdQ8WyNBvkU/xPc/CtcYXCa7ekP73oGuKfH+M=";
+        sha256_aarch64 = "sha256-s8ZAVKvRNXpjxRYqM3E5oss5FdqW+tv1qQC2pDjfG+s=";
+        openSha256 = "sha256-/32Zf0dKrofTmPZ3Ratw4vDM7B+OgpC4p7s+RHUjCrg=";
+        settingsSha256 = "sha256-kQsvDgnxis9ANFmwIwB7HX5MkIAcpEEAHc8IBOLdXvk=";
+        persistencedSha256 = "sha256-E2J2wYYyRu7Kc3MMZz/8ZIemcZg68rkzvqEwFAL3fFs=";
+        # version = "555.58.02";
+        # sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
+        # sha256_aarch64 = "sha256-wb20isMrRg8PeQBU96lWJzBMkjfySAUaqt4EgZnhyF8=";
+        # openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
+        # settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+        # persistencedSha256 = "sha256-a1D7ZZmcKFWfPjjH1REqPM5j/YLWKnbkP9qfRyIyxAw=";
       };  # package
     };  # nvidia
   };  # hardware
