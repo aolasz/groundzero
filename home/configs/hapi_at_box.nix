@@ -48,7 +48,7 @@
   wayland.windowManager.sway = {
     extraSessionCommands = lib.mkAfter ''
       export NIXOS_OZONE_WL=1
-      export WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+      export WLR_DRM_DEVICES=/dev/dri/card1
       # export WLR_DRM_DEVICES=/dev/dri/card1
       export WLR_NO_HARDWARE_CURSORS=1
       export WLR_RENDERER=vulkan

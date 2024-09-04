@@ -9,8 +9,9 @@
       STEAM_EXTRA_COMPAT_TOOLS_PATHS =
         "\${HOME}/.steam/root/compatibilitytools.d";
     };
-    file.".ssh/allowed_signers".text =
-      "* ${builtins.readFile /home/hapi/.ssh/id_ed25519.pub}";
+    file.".ssh/allowed_signers".text = ''
+      * ${builtins.readFile "/home/hapi/.ssh/id_ed25519.pub"}
+    '';
   };
 
 
