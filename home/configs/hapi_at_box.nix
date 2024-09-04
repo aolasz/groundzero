@@ -40,18 +40,18 @@
     # You can find these names by running `swaymsg -t get_outputs` in a terminal
     # when Sway is running.
     extraConfig = lib.mkAfter ''
-      output "Unknown-1" {
+      output "DP-3" {
           mode 2560x1440@60Hz
           position 0,0
       }
 
-      output "Unknown-2" {
+      output "DP-2" {
           mode 1920x1080@60Hz
           position -1920,0
       }
 
-      workspace 1 output "Unknown-1"
-      workspace 2 output "Unknown-2"
+      workspace 1 output "DP-3"
+      workspace 2 output "DP-2"
     '';
   };
 
