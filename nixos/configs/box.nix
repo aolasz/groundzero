@@ -89,11 +89,11 @@
             vaapiVdpau
             libvdpau-va-gl
             nvidia-vaapi-driver
-            #  libglvnd
-            #  egl-wayland
-            #  vulkan-tools
-            #  vulkan-loader
-            #  vulkan-validation-layers
+            libglvnd
+            egl-wayland
+            vulkan-tools
+            vulkan-loader
+            vulkan-validation-layers
           ];
           pathsToLink = [ "/lib" "/lib32" "/share" ];
         })
@@ -102,6 +102,8 @@
     nvidia = {
       modesetting.enable = true;
       open = false;
+      # Currently nvidia-settings does not compile due to missing vulkan
+      # header files:
       nvidiaSettings = false;
       powerManagement.enable = true;
       powerManagement.finegrained = false;
@@ -129,8 +131,6 @@
 
   # Load NVIDIA driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
-
-  services.displayManager.autoLogin = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
 

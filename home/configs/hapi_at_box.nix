@@ -34,6 +34,12 @@
       export NIXOS_OZONE_WL=1
       export WLR_DRM_DEVICES=/dev/dri/card1
       export WLR_NO_HARDWARE_CURSORS=1
+      # Sway fails to start with this:
+      #export WLR_RENDERER=vulkan
+      export LIBVA_DRIVER_NAME=nvidia
+      export XDG_SESSION_TYPE=wayland
+      export GBM_BACKEND=nvidia-drm
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
     '';
 
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
