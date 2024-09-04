@@ -11,22 +11,6 @@
   };
 
   home = {
-    packages = with pkgs; [
-      vulkan-tools
-      vulkan-loader
-      vulkan-validation-layers
-      libva-utils
-      #vdpauinfo
-      #libvdpau-va-gl
-      #egl-wayland
-      #wgpu-utils
-      #mesa
-      libglvnd
-      #nvtopPackages.full
-      #nvitop
-      libGL
-      glxinfo
-    ];
     sessionVariables = {
       LIBVA_DRIVER_NAME = "nvidia";
       XDG_SESSION_TYPE = "wayland";
@@ -49,14 +33,7 @@
     extraSessionCommands = lib.mkAfter ''
       export NIXOS_OZONE_WL=1
       export WLR_DRM_DEVICES=/dev/dri/card1
-      # export WLR_DRM_DEVICES=/dev/dri/card1
       export WLR_NO_HARDWARE_CURSORS=1
-      export WLR_RENDERER=vulkan
-      export LIBVA_DRIVER_NAME=nvidia
-      export XDG_SESSION_TYPE=wayland
-      export GBM_BACKEND=nvidia-drm
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
-      export XWAYLAND_NO_GLAMOR=1
     '';
 
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
