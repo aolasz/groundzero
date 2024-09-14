@@ -17,7 +17,7 @@
   my = {
     desktop = {
       enable = true;
-      brotherMfp.enable = true;
+      #brotherMfp.enable = true;
     };
     gaming.steam.enable = true;
     network = {
@@ -89,11 +89,11 @@
             vaapiVdpau
             libvdpau-va-gl
             nvidia-vaapi-driver
-            libglvnd
-            egl-wayland
-            vulkan-tools
-            vulkan-loader
-            vulkan-validation-layers
+            #libglvnd
+            #egl-wayland
+            #vulkan-tools
+            #vulkan-loader
+            #vulkan-validation-layers
           ];
           pathsToLink = [ "/lib" "/lib32" "/share" ];
         })
@@ -108,7 +108,7 @@
       powerManagement.enable = true;
       powerManagement.finegrained = false;
       #forceFullCompositionPipeline = true;
-      nvidiaPersistenced = true;
+      #nvidiaPersistenced = true;
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/linux/nvidia-x11/default.nix
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
         version = "560.35.03";
@@ -131,6 +131,10 @@
 
   # Load NVIDIA driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
+
+  services.greetd.enable = false;
+
+  services.getty.autologinUser = "hapi";
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
