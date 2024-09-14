@@ -11,6 +11,22 @@
   };
 
   home = {
+    packages = with pkgs; [
+      vulkan-tools
+      vulkan-loader
+      vulkan-validation-layers
+      libva-utils
+      vdpauinfo
+      libvdpau-va-gl
+      egl-wayland
+      wgpu-utils
+      mesa
+      libglvnd
+      nvtopPackages.full
+      nvitop
+      libGL
+      glxinfo
+    ];
     sessionVariables = {
       LIBVA_DRIVER_NAME = "nvidia";
       XDG_SESSION_TYPE = "wayland";
