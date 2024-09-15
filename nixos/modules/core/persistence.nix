@@ -28,6 +28,7 @@
       "/etc/ssh/authorized_keys.d"
       "/var/lib/alsa"
       "/var/lib/NetworkManager"
+      "/var/lib/nixos"
       "/var/lib/upower"
       { directory = "/var/lib/bluetooth"; mode = "u=rwx,g=,o="; }
       { directory = "/var/lib/fail2ban"; mode = "u=rwx,g=rx,o="; }

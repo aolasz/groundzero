@@ -17,8 +17,9 @@
   my = {
     desktop = {
       enable = true;
-      brotherMfp.enable = true;
+      #brotherMfp.enable = true;
     };
+    gaming.steam.enable = true;
     network = {
       interfaces = {
         wired = { wired0 = "a8:a1:59:6a:c5:5d"; };
@@ -37,17 +38,29 @@
         "ahci"
         "k10temp"
         "nvme"
-        "rtsx_pci_sdmmc"
+        #"rtsx_pci_sdmmc"
         "sd_mod"
-        "sdhci_pci"
-        "thunderbolt"
+        #"sdhci_pci"
+        #"thunderbolt"
         "usb_storage"
         "usbhid"
         "xhci_pci"
       ];
-      # kernelModules = [ "i915" ];
+      # kernelModules = [ "nvidia" ];
     };
-    kernelModules = [ "kvm-amd" ];
+    blacklistedKernelModules = [ "nouveau" ];
+    kernelModules = [
+      "kvm-amd"
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ];
+    kernelParams = [
+      "nvidia_drm.fbdev=1"
+      "nvidia-drm.modeset=1"
+    ];
+    #extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     loader.systemd-boot = {
       enable = true;
       consoleMode = "max";
@@ -70,28 +83,46 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        libglvnd
-        egl-wayland
-        vulkan-tools
-      ];
-      extraPackages32 = with pkgs; [
-        libglvnd
-        egl-wayland
-        vulkan-tools
+        (buildEnv {
+          name = "nvidia-vaapi-drivers";
+          paths = [
+            vaapiVdpau
+            libvdpau-va-gl
+            nvidia-vaapi-driver
+            #libglvnd
+            #egl-wayland
+            #vulkan-tools
+            #vulkan-loader
+            #vulkan-validation-layers
+          ];
+          pathsToLink = [ "/lib" "/lib32" "/share" ];
+        })
       ];
     };
     nvidia = {
       modesetting.enable = true;
       open = false;
-      nvidiaSettings = true;
+      # Currently nvidia-settings does not compile due to missing vulkan
+      # header files:
+      nvidiaSettings = false;
+      powerManagement.enable = true;
+      powerManagement.finegrained = false;
+      #forceFullCompositionPipeline = true;
+      #nvidiaPersistenced = true;
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/linux/nvidia-x11/default.nix
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "555.58.02";
-        sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
-        sha256_aarch64 = "sha256-wb20isMrRg8PeQBU96lWJzBMkjfySAUaqt4EgZnhyF8=";
-        openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
-        settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
-        persistencedSha256 = "sha256-a1D7ZZmcKFWfPjjH1REqPM5j/YLWKnbkP9qfRyIyxAw=";
+        version = "560.35.03";
+        sha256_64bit = "sha256-8pMskvrdQ8WyNBvkU/xPc/CtcYXCa7ekP73oGuKfH+M=";
+        sha256_aarch64 = "sha256-s8ZAVKvRNXpjxRYqM3E5oss5FdqW+tv1qQC2pDjfG+s=";
+        openSha256 = "sha256-/32Zf0dKrofTmPZ3Ratw4vDM7B+OgpC4p7s+RHUjCrg=";
+        settingsSha256 = "sha256-kQsvDgnxis9ANFmwIwB7HX5MkIAcpEEAHc8IBOLdXvk=";
+        persistencedSha256 = "sha256-E2J2wYYyRu7Kc3MMZz/8ZIemcZg68rkzvqEwFAL3fFs=";
+        #version = "555.58.02";
+        #sha256_64bit = "sha256-xctt4TPRlOJ6r5S54h5W6PT6/3Zy2R4ASNFPu8TSHKM=";
+        #sha256_aarch64 = "sha256-wb20isMrRg8PeQBU96lWJzBMkjfySAUaqt4EgZnhyF8=";
+        #openSha256 = "sha256-8hyRiGB+m2hL3c9MDA/Pon+Xl6E788MZ50WrrAGUVuY=";
+        #settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+        #persistencedSha256 = "sha256-a1D7ZZmcKFWfPjjH1REqPM5j/YLWKnbkP9qfRyIyxAw=";
       };  # package
     };  # nvidia
   };  # hardware
@@ -101,7 +132,9 @@
   # Load NVIDIA driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
-  services.displayManager.autoLogin = true;
+  services.greetd.enable = false;
+
+  services.getty.autologinUser = "hapi";
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -139,6 +172,24 @@
           }; # partitions
         }; # content
       }; # system
+      nvme1 = {
+        type = "disk";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_970_PRO_1TB_S462NF0M606657T";
+        content = {
+          type = "gpt";
+          partitions = {
+            nvme1n1p1 = {
+              name = "nvme1";
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/mnt/nvme1";
+              };
+            };
+          }; # partitions
+        }; # content
+      }; # nvme1
     }; # disk
     zpool = {
       rpool = {
