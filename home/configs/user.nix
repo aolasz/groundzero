@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   home = {
@@ -9,6 +9,11 @@
   home.file.".ssh/allowed_signers".text =
     "* ${builtins.readFile /home/hapi/.ssh/id_ed25519.pub}";
 
+  home.file.".ssh/config.d/.keep".text = "";
+
+  programs.ssh.extraConfig = lib.mkAfter ''
+    Include ~/.ssh/config.d/*
+  '';
   programs.git = {
     userName = "aolasz";
     userEmail = "49680062+aolasz@users.noreply.github.com";
