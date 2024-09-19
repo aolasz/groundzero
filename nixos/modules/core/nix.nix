@@ -7,7 +7,7 @@
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
-    package = pkgs.nixVersions.nix_2_21;
+    package = pkgs.nixVersions.nix_2_23;
     settings = {
       auto-optimise-store = true;
       # Follow Conventional Commits style

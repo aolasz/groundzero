@@ -1,41 +1,79 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, lib, pkgs, ... }:
 
-let
-  inherit (pkgs.stdenv.hostPlatform) system;
-in
 {
   imports = [ inputs.self.homeModules.default ./user.nix ];
 
   my = {
-    desktop = {
-      enable = true;
-    };
+    desktop.enable = true;
     gaming.wine.enable = true;
+    gaming.lutris.enable = true;
+    gaming.protonup.enable = true;
+  };
+
+  home = {
+    packages = with pkgs; [
+      vulkan-tools
+      vulkan-loader
+      vulkan-validation-layers
+      libva-utils
+      vdpauinfo
+      libvdpau-va-gl
+      egl-wayland
+      wgpu-utils
+      mesa
+      libglvnd
+      nvtopPackages.full
+      nvitop
+      libGL
+      glxinfo
+    ];
+    sessionVariables = {
+      LIBVA_DRIVER_NAME = "nvidia";
+      XDG_SESSION_TYPE = "wayland";
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      WLR_NO_HARDWARE_CURSORS = "1";
+       __NV_PRIME_RENDER_OFFLOAD = "1";
+      VK_ICD_FILENAMES =
+        "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
+      NVK_USE_MESA_OVERLAY_LAYER = "0";
+      LIBGL_ALWAYS_INDIRECT = "0";
+      NVD_BACKEND = "direct";
+    };
+    shellAliases = {
+      # signal-desktop = "env -u WAYLAND_DISPLAY signal-desktop";
+    };
   };
 
   wayland.windowManager.sway = {
     extraSessionCommands = lib.mkAfter ''
-      export WLR_NO_HARDWARE_CURSORS=1
-      export WLR_DRM_DEVICES=/dev/dri/card0
       export NIXOS_OZONE_WL=1
+      export WLR_DRM_DEVICES=/dev/dri/card1
+      export WLR_NO_HARDWARE_CURSORS=1
+      # Sway fails to start with this:
+      #export WLR_RENDERER=vulkan
+      export LIBVA_DRIVER_NAME=nvidia
+      export XDG_SESSION_TYPE=wayland
+      export GBM_BACKEND=nvidia-drm
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
     '';
-    
+
     extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
-    # You can find these names by `running swaymsg -t get_outputs` in a terminal
+    # You can find these names by running `swaymsg -t get_outputs` in a terminal
     # when Sway is running.
     extraConfig = lib.mkAfter ''
-      output "Unknown-1" {
+      output "DP-3" {
           mode 2560x1440@60Hz
           position 0,0
       }
 
-      output "Unknown-2" {
+      output "DP-2" {
           mode 1920x1080@60Hz
           position -1920,0
       }
 
-      workspace 1 output "Unknown-1"
-      workspace 2 output "Unknown-2"
+      workspace 1 output "DP-3"
+      workspace 2 output "DP-2"
     '';
   };
 

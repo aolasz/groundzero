@@ -4,10 +4,16 @@
   home = {
     username = "hapi";
     homeDirectory = "/home/hapi";
+
+    sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+        "\${HOME}/.steam/root/compatibilitytools.d";
+    };
+    file.".ssh/allowed_signers".text = ''
+      * ${builtins.readFile "/home/hapi/.ssh/id_ed25519.pub"}
+    '';
   };
 
-  home.file.".ssh/allowed_signers".text =
-    "* ${builtins.readFile /home/hapi/.ssh/id_ed25519.pub}";
 
   home.file.".ssh/config.d/.keep".text = "";
 

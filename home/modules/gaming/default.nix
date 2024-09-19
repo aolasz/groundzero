@@ -4,7 +4,9 @@
   imports = [
     ./devilutionx.nix
     ./diablo2.nix
-    # ./steam.nix
+    ./lutris.nix
+    ./mangohud.nix
+    ./protonup.nix
     ./wine.nix
   ];
 }
