@@ -2,7 +2,7 @@
 # Resolution: 2160x1440
 # CPU: AMD Ryzen 7 5800X (16) @ 3.80 GHz
 # GPU: NVIDIA GeForce GTX 1080 Ti [Discrete]
-# Memory: 31.27 GiB
+# Memory: 31.27 GiB ECC
 
 { inputs, config, pkgs, lib, ... }:
 
