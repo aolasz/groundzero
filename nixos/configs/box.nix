@@ -26,7 +26,7 @@
         wireless = { wireless0 = "b0:a4:60:34:6f:43"; };
       };
       shares.enable = true;
-      # tailscale.enable = true;
+      tailscale.enable = true;
     };
     virtualization.enable = true;
     zfs.enable = true;
