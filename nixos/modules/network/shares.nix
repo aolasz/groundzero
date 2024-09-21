@@ -35,8 +35,8 @@ in
     systemd.tmpfiles.rules = [ "d /var/lib/nfs/sm.bak - root root -" ];
 
     fileSystems = {
-      "/nfs/masterbox/data" = {
-        device = "masterbox:/mnt/hdd_pool/data";
+      "/nfs/nas/share" = {
+        device = "nas:/mnt/hdd_pool/data/share";
         fsType = "nfs";
         options = options ++ [ "rw" ];
       };
