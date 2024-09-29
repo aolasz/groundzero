@@ -19,6 +19,7 @@ let
     nvim-tree-lua
     trouble-nvim
     todo-comments-nvim
+    obsidian-nvim
     vim-commentary
     vim-obsession
     vim-nix

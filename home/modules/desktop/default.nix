@@ -14,6 +14,7 @@ in
     ./libreoffice.nix
     ./mako.nix
     ./mpv.nix
+    ./obsidian.nix
     ./swaylock.nix
     ./swaywm.nix
     ./theme.nix
@@ -40,6 +41,7 @@ in
     inkscape.enable = lib.mkDefault true;
     libreOffice.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
+    obsidian.enable = lib.mkDefault true;
     zathura.enable = lib.mkDefault true;
     freetube.enable = lib.mkDefault true;
   };

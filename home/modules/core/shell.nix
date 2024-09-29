@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   home.sessionVariables.FLAKE0 = config.my.flakeURI;
@@ -45,6 +45,8 @@
     includeSystemConfig = true;
     variables.completion-ignore-case = "on";
   };
+
+  home.packages = [ pkgs.ripgrep ];
 
   # Customize prompt
   programs.starship = {
