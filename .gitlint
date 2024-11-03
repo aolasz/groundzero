@@ -19,4 +19,4 @@ line-length=100
 min-length=5
 
 [author-valid-email]
-regex=49680062+aolasz@users.noreply.github.com
+regex=^([0-9]{8}\+[a-zA-Z0-9]+@users\.noreply\.github\.com|[a-zA-Z0-9._\+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$
