@@ -29,6 +29,8 @@ in
     services.tailscale = {
       enable = true;
       package = pkgs.tailscale;
+      # If there is an exit node on the LAN, use this:
+      #useRoutingFeatures = "client";
     };
   };
 }
