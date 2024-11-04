@@ -9,8 +9,8 @@ let
       self.nixosConfigurations
   ) ++ [
     {
-      user = "ccornix";
-      host = "debian";
+      user = "hapi";
+      host = "box";
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     }
   ];
