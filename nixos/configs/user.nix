@@ -17,6 +17,7 @@ in
       "audio"
       "video"
       "input"
+      "uinput"
       "dialout" # to access serial ports
     ] ++ self.lib.filterExistingGroups config [
       "networkmanager"

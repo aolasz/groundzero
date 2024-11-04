@@ -3,6 +3,7 @@
 {
   imports = [
     ./console.nix
+    ./kanata.nix
     ./locale.nix
     ./network.nix
     ./nix.nix
