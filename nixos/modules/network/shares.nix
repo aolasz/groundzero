@@ -35,11 +35,16 @@ in
     systemd.tmpfiles.rules = [ "d /var/lib/nfs/sm.bak - root root -" ];
 
     fileSystems = {
-      "/nfs/nas/share" = {
-        device = "nas:/mnt/hdd_pool/data/share";
+      "/nfs/nas/obsidian" = {
+        device = "nas:/mnt/hdd_pool/data/obsidian";
         fsType = "nfs";
         options = options ++ [ "rw" ];
       };
+      #"/nfs/nas/test" = {
+      #  device = "nas:/mnt/hdd_pool/data/syncthing/Obsidian Volt";
+      #  fsType = "nfs";
+      #  options = options ++ [ "rw" ];
+      #};
     };
 
     environment.systemPackages = [ pkgs.nfs-utils ];
