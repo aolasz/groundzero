@@ -16,7 +16,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, disko, home-manager, ... } @ inputs:
     let
       supportedSystems = [ "x86_64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
