@@ -19,7 +19,6 @@ in
 
       # Additional apps
       ffmpeg-full # to record and convert audio and video
-      v4l-utils # Video 4 Linux 2 utils to record from video sources
       gimp # raster graphics editor
       gnome.simple-scan # scanning utility
       libnotify # to manually send notifications

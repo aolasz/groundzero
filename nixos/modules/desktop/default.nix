@@ -9,6 +9,7 @@ in
     ./generic.nix
     ./swaylock.nix
     ./swaywm.nix
+    ./virt-camera.nix
   ];
 
   options.my.desktop = {

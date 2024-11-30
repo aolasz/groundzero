@@ -17,6 +17,7 @@
   my = {
     desktop = {
       enable = true;
+      virtCamera.enable = true;
       #brotherMfp.enable = true;
     };
     gaming.steam.enable = true;
