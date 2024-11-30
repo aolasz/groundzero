@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   environment.systemPackages = with pkgs; [
     bashmount
@@ -9,6 +8,7 @@
     mc
     python3Minimal
     rsync
+    uv
     wget
 
     # Diagnostics
