@@ -20,7 +20,7 @@ in
       # Additional apps
       ffmpeg-full # to record and convert audio and video
       gimp # raster graphics editor
-      gnome.simple-scan # scanning utility
+      simple-scan # scanning utility
       libnotify # to manually send notifications
       pcmanfm # GUI file manager
       remmina # remote desktop app

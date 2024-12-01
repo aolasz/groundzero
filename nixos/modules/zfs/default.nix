@@ -40,7 +40,7 @@ in
       # extraModulePackages = [ xanmodKernel.zfs ];
       kernelPackages =
         with builtins; with lib; let
-          latestCompatibleVersion = config.boot.zfs.package.latestCompatibleLinuxPackages.kernel.version;
+          latestCompatibleVersion = pkgs.linuxPackages.kernel.version;
           xanmodPackages = filterAttrs (name: packages: hasSuffix "_xanmod" name && (tryEval packages).success) pkgs.linuxKernel.packages;
           compatiblePackages = filter (packages: compareVersions packages.kernel.version latestCompatibleVersion <= 0) (attrValues xanmodPackages);
           orderedCompatiblePackages = sort (i: j: compareVersions i.kernel.version j.kernel.version > 0) compatiblePackages;

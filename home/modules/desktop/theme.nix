@@ -120,7 +120,7 @@ in
 
         # Needed for proper GTK and QT5 theming
         gtk-engine-murrine
-        gnome3.gnome-themes-extra
+        gnome-themes-extra
         libsForQt5.qtstyleplugins
       ];
 
@@ -152,7 +152,7 @@ in
         #   scheme = config.colorScheme;
         # };
         name = "Mint-Y-Dark-Grey";
-        package = pkgs.cinnamon.mint-themes;
+        package = pkgs.mint-themes;
       };
       font = {
         name = "DejaVu Sans";
@@ -161,7 +161,7 @@ in
       };
       iconTheme = {
         name = "Mint-Y-Grey";
-        package = pkgs.cinnamon.mint-y-icons;
+        package = pkgs.mint-y-icons;
       };
       inherit (cfg) cursorTheme;
       gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
