@@ -35,16 +35,17 @@ in
       ] ++ lib.optional (cfg.arcMaxMiB > 0)
         "zfs.zfs_arc_max=${toString (cfg.arcMaxMiB * 1048576)}";
 
-      supportedFilesystems.zfs = true;
+      # kernel 6.11 (_stable and _latest) is unsupported(?) by ZFS so we have to fall back to 6.6
+      kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
+      #kernelPackages =
+      #  with builtins; with lib; let
+      #    latestCompatibleVersion = pkgs.linuxPackages.kernel.version;
+      #    xanmodPackages = filterAttrs (name: packages: hasSuffix "_xanmod" name && (tryEval packages).success) pkgs.linuxKernel.packages;
+      #    compatiblePackages = filter (packages: compareVersions packages.kernel.version latestCompatibleVersion <= 0) (attrValues xanmodPackages);
+      #    orderedCompatiblePackages = sort (i: j: compareVersions i.kernel.version j.kernel.version > 0) compatiblePackages;
+      #  in head orderedCompatiblePackages;
 
-      # extraModulePackages = [ xanmodKernel.zfs ];
-      kernelPackages =
-        with builtins; with lib; let
-          latestCompatibleVersion = pkgs.linuxPackages.kernel.version;
-          xanmodPackages = filterAttrs (name: packages: hasSuffix "_xanmod" name && (tryEval packages).success) pkgs.linuxKernel.packages;
-          compatiblePackages = filter (packages: compareVersions packages.kernel.version latestCompatibleVersion <= 0) (attrValues xanmodPackages);
-          orderedCompatiblePackages = sort (i: j: compareVersions i.kernel.version j.kernel.version > 0) compatiblePackages;
-        in head orderedCompatiblePackages;
+      supportedFilesystems.zfs = lib.mkForce true;
     };
 
     environment = {
