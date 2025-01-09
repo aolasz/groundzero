@@ -309,7 +309,7 @@ in
       enable = true;
       timeouts = [
         {
-          timeout = 180;
+          timeout = 1800;
           command = ''${swaymsg} "output * dpms off"'';
           resumeCommand = ''${swaymsg} "output * dpms on"'';
         }
