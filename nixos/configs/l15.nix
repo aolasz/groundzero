@@ -18,6 +18,7 @@
     desktop = {
       enable = true;
       brotherMfp.enable = true;
+      virtCamera.enable = true;
     };
     network = {
       interfaces = {
@@ -60,16 +61,18 @@
   hardware = {
     cpu.intel.updateMicrocode = lib.mkDefault
       config.hardware.enableRedistributableFirmware;
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
       extraPackages = with pkgs; [ intel-media-driver intel-compute-runtime ];
       extraPackages32 = with pkgs; [ intel-media-driver intel-compute-runtime ];
     };
   };
 
   networking.hostName = "l15";
+
+  services.greetd.enable = false;
+
+  services.getty.autologinUser = "hapi";
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
