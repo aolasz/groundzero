@@ -40,6 +40,8 @@
     tmux.enable = true;
   };
 
+  # Needed for `gio mount`
+  services.gvfs.enable = true;
   # Needed for bashmount and CLI udisksctl
   services.udisks2.enable = true;
   security.polkit.enable = true;

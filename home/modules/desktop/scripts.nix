@@ -24,4 +24,10 @@
     text = builtins.readFile ../../.local/bin/my-volume;
     runtimeInputs = [ pkgs.pamixer ];
   };
+  my-mtp = pkgs.writeShellApplication {
+    name = "my-mtp";
+    text = builtins.readFile ../../.local/bin/my-mtp;
+    runtimeInputs = [ pkgs.glib pkgs.gvfs ];
+  };
+
 }

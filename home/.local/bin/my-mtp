@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Dependencies:
+# glib gvfs
+
+set -euo pipefail
+
+# Use nix-store -qR to find all dependencies of the current system profile,
+# then filter for directories containing 'gvfs'.
+gvfs_dirs=$(nix-store -qR /nix/var/nix/profiles/system | grep gvfs)
+
+# If no gvfs directories are found, exit with an error message.
+if [ -z "$gvfs_dirs" ]; then
+  echo "Error: No gvfs directories found in the Nix store." >&2
+  exit 1
+fi
+
+# If multiple gvfs directories are found, select the one with the highest version number.
+if [[ $(echo "$gvfs_dirs" | wc -l) -gt 1 ]]; then
+  echo "Multiple gvfs directories found. Selecting the latest version." >&2
+  # Sort the directories by version number (assuming the version is part of the directory name).
+  gvfs_dir=$(echo "$gvfs_dirs" | sort -V | tail -n 1)
+else
+  gvfs_dir="$gvfs_dirs"
+fi
+
+# Check if the directory exists.
+if [ ! -d "$gvfs_dir" ]; then
+  echo "Error: gvfs directory '$gvfs_dir' not found." >&2
+  exit 1
+fi
+
+#export GIO_EXTRA_MODULES=/nix/store/b2jwhrkdrxx0cfasp8j5331nlh466mvx-gvfs-1.56.1/lib/gio/modules
+export GIO_EXTRA_MODULES=$gvfs_dir/lib/gio/modules
+
+# Simple version
+# lsusb | grep "(MTP)" | awk '{printf "gio mount \"mtp://[usb:%03d,%03d]/\"\n", $2, $4}' | sed 's/://g'
+
+lsusb | grep "(MTP)" | while read line; do
+  bus=$(echo "$line" | awk '{print $2}' | sed 's/://g')
+  device=$(echo "$line" | awk '{print $4}' | sed 's/://g')
+
+  if [[ -n "$bus" && -n "$device" ]]; then
+    echo gio mount "mtp://[usb:$bus,$device]/"
+    gio mount "mtp://[usb:$bus,$device]/"
+    echo Mounted at:
+    echo $(ls /run/user/1000/gvfs/mtp*)
+  else
+    echo "No MTP device found or error parsing lsusb output."
+  fi
+done
+
+# vim: ft=bash:ts=2:sw=2:et
