@@ -4,6 +4,7 @@
   imports = [
     ./colors.nix
     ./git.nix
+    ./helix.nix
     ./mc.nix
     ./neovim.nix
     ./nixpkgs.nix
