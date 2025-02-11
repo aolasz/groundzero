@@ -46,7 +46,15 @@
     variables.completion-ignore-case = "on";
   };
 
-  home.packages = [ pkgs.ripgrep ];
+  home.packages = [
+    pkgs.ripgrep
+    (pkgs.buildFHSUserEnv {
+      name = "pixi";
+      # if you want to run it in every terminal:
+      # runScript = "pixi";
+      targetPkgs = pkgs: with pkgs; [ pixi ];
+    })
+  ];
 
   # Customize prompt
   programs.starship = {
