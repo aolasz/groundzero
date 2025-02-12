@@ -35,7 +35,7 @@
       enable = true;
       viAlias = true;
       vimAlias = true;
-      defaultEditor = true;
+      defaultEditor = false;
     };
     tmux.enable = true;
   };

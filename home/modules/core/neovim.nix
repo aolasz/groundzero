@@ -48,10 +48,10 @@ let
   '';
 in
 {
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
+  #home.sessionVariables = {
+  #  EDITOR = "nvim";
+  #  VISUAL = "nvim";
+  #};
 
   programs.neovim = {
     enable = true;
