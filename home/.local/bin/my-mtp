@@ -35,7 +35,7 @@ export GIO_EXTRA_MODULES=$gvfs_dir/lib/gio/modules
 # Simple version
 # lsusb | grep "(MTP)" | awk '{printf "gio mount \"mtp://[usb:%03d,%03d]/\"\n", $2, $4}' | sed 's/://g'
 
-lsusb | grep "(MTP)" | while read line; do
+lsusb | grep "(MTP)" | while read -r line; do
   bus=$(echo "$line" | awk '{print $2}' | sed 's/://g')
   device=$(echo "$line" | awk '{print $4}' | sed 's/://g')
 
@@ -43,7 +43,7 @@ lsusb | grep "(MTP)" | while read line; do
     echo gio mount "mtp://[usb:$bus,$device]/"
     gio mount "mtp://[usb:$bus,$device]/"
     echo Mounted at:
-    echo $(ls /run/user/1000/gvfs/mtp*)
+    ls /run/user/1000/gvfs/mtp*
   else
     echo "No MTP device found or error parsing lsusb output."
   fi
