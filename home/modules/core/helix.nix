@@ -60,7 +60,7 @@
     };
     settings = {
       editor = {
-        bufferline = "always"; # Enable tab bar at the top
+        bufferline = "multiple"; # Enable tab bar at the top
         color-modes = true;
         cursorline = true;
         cursor-shape = {
@@ -79,7 +79,10 @@
           skip-levels = 1;
         };
         indent-heuristic = "tree-sitter";
-        inline-diagnostics.cursor-line = "error";
+        inline-diagnostics = {
+          cursor-line = "error"; # Show inline diagnostics when the cursor is on the line
+          other-lines = "disable"; # Don't expand diagnostics unless the cursor is on the line
+        };
         line-number = "relative";
         lsp = {
           display-messages = true;
@@ -87,14 +90,25 @@
           display-signature-help-docs = true;
         };
         mouse = true;
+        rulers = [99];
+        true-color = true;
         soft-wrap.enable = true;
+        statusline.left = ["mode" "spinner" "version-control" "file-name"];
         whitespace.render = "none";
       };
       keys.normal = {
+        A-f = ":format";
         D = "kill_to_line_end";
-        # Use Shift-l and -h to move through tabs
-        S-l = ":buffer-next";
-        S-h = ":buffer-previous";
+        "A-," = "goto_previous_buffer";
+        "A-." = "goto_next_buffer";
+        A-w = ":buffer-close";
+        "A-/" = "repeat_last_motion";
+        A-x = "extend_to_line_bounds";
+        X = "select_line_above";
+      };
+      keys.select = {
+        A-x = "extend_to_line_bounds";
+        X = "select_line_above";
       };
       theme = "gruvbox";
     };
