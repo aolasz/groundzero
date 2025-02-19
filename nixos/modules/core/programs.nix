@@ -1,12 +1,19 @@
-{ pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     bashmount
     coreutils
     fuse
     libressl
     mc
-    python3Minimal
+    (inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.python313.withPackages (ps:
+      with ps; [
+        debugpy
+        ruff
+      ]))
     rsync
     uv
     wget

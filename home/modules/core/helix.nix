@@ -1,4 +1,8 @@
-{unstable, ...}: {
+{
+  pkgs,
+  unstable,
+  ...
+}: {
   home.sessionVariables = {
     EDITOR = "hx";
     VISUAL = "hx";
@@ -8,20 +12,89 @@
     unstable.alejandra
     unstable.bash-language-server
     unstable.nil
+    unstable.pylyzer
+    unstable.pyright
     unstable.ruff
     unstable.shfmt
   ];
+
+  # source:
+  # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#ruff--pyright--pylyzer
+  # performance benchmarks:
+  # hx -v your_file.py 2> helix.log
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
     package = unstable.helix;
     languages = {
+      debug-adapter = {
+        name = "python";
+        transport = "stdio";
+        command = "python";
+        args = ["-m" "debugpy" "--listen" "5678" "--wait-for-client"];
+        configurations.Python = {
+          type = "python";
+          request = "launch";
+          name = "Python Debugger";
+          program = "\${file}";
+          pythonPath = "python";
+          console = "integratedTerminal";
+          cwd = "\${workspaceFolder}";
+          env = {};
+        };
+      };
+      language-server.pylyzer = {
+        command = "pylyzer";
+        args = ["--server"];
+        config.python.settings.lint.ignore = [
+          "ANN101" # Disable attribute checks for dynamically loaded classes
+          "E501" # Ignore line length errors
+        ];
+      };
+      language-server.pyright = {
+        # command = "pyright-langserver";
+        # args = ["--stdio"];
+        config.python.analysis = {
+          autoSearchPaths = true;
+          functionReturnTypes = true;
+          typeCheckingMode = "strict";
+          useLibraryCodeForTypes = true;
+          variableTypes = true;
+        };
+        config.python.settings.lint.ignore = [
+          "ANN101" # Disable attribute checks for dynamically loaded classes
+          "E501" # Ignore line length errors
+        ];
+      };
       language-server.ruff = {
         command = "ruff";
-        config.settings = {
+        args = ["server"];
+        config.python.settings = {
           lineLength = 98;
-          lint.select = ["E" "F" "I"];
+          lint = {
+            select = [
+              "E" # pycodestyle errors
+              "F" # Pyflakes
+              # "I" # isort
+              "C" # complexity
+              "B" # Bugbear
+              "S" # security
+              # "ANN" # type annotations
+              # "N" # naming
+              # "D" # docstrings
+            ];
+            ignore = [
+              "ANN101" # Disable attribute checks for dynamically loaded classes
+              "E501" # Ignore line length errors
+            ];
+            extend-select = ["W"]; # Add warnings
+          };
+          format.preview = true; # Enable experimental formatting rules
+          target-version = "py313";
+          per-file-ignores = {
+            "__init__.py" = ["F401"]; # Ignore unused imports in __init__.py files
+          };
         };
       };
       language = [
@@ -49,7 +122,17 @@
         }
         {
           name = "python";
-          language-servers = ["ruff"];
+          language-servers = [
+            {
+              name = "pyrigth";
+              except-features = ["format" "diagnostics"];
+            }
+            {
+              name = "ruff";
+              only-features = ["format" "diagnostics"];
+            }
+            "pylyzer"
+          ];
           auto-format = true;
           formatter = {
             command = "ruff";
@@ -73,8 +156,9 @@
           hidden = false;
           parents = false;
         };
+        idle-timeout = 500; # Milliseconds
         indent-guides = {
-          render = false;
+          render = true;
           character = "▏";
           skip-levels = 1;
         };
@@ -97,14 +181,15 @@
         whitespace.render = "none";
       };
       keys.normal = {
-        A-f = ":format";
-        D = "kill_to_line_end";
+        "A-f" = ":format";
+        "A-w" = ":buffer-close";
+        "A-x" = "extend_to_line_bounds";
         "A-," = "goto_previous_buffer";
         "A-." = "goto_next_buffer";
-        A-w = ":buffer-close";
         "A-/" = "repeat_last_motion";
-        A-x = "extend_to_line_bounds";
-        X = "select_line_above";
+        "C-c" = ":lsp-restart";
+        "D" = "kill_to_line_end";
+        "X" = "select_line_above";
       };
       keys.select = {
         A-x = "extend_to_line_bounds";
