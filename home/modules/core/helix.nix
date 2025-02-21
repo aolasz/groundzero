@@ -30,18 +30,10 @@
       language-server.basedpyright = {
         command = "basedpyright-langserver";
         args = ["--stdio"];
-        config = {};
-        # config.python.analysis = {
-        #   autoSearchPaths = true;
-        #   functionReturnTypes = true;
-        #   typeCheckingMode = "strict";
-        #   useLibraryCodeForTypes = true;
-        #   variableTypes = true;
-        # };
-        # config.python.settings.lint.ignore = [
-        #   "ANN101" # Disable attribute checks for dynamically loaded classes
-        #   "E501" # Ignore line length errors
-        # ];
+        settings = {
+          python.analysis.typeCheckingMode = "basic";
+          python.analysis.autoSearchPaths = true;
+        };
       };
       language-server.ruff = {
         command = "ruff";
@@ -99,13 +91,14 @@
         {
           name = "python";
           language-servers = ["ruff" "basedpyright"];
+          # config = {}; # Critical empty configuration marker
           auto-format = true;
-          file-types = ["py" "ipynb"];
+          file-types = ["py" "ipynb" "pyi"];
           formatter = {
             command = "ruff";
             args = ["format" "-"];
           };
-          roots = ["pyproject.toml" ".git" ".venv/"];
+          roots = ["pyproject.toml" "pyrightconfig.json" ".git" ".venv/"];
         }
       ];
     };
