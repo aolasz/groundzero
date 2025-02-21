@@ -12,14 +12,13 @@
     unstable.alejandra
     unstable.bash-language-server
     unstable.nil
-    unstable.pylyzer
-    unstable.pyright
+    pkgs.basedpyright
     unstable.ruff
     unstable.shfmt
   ];
 
   # source:
-  # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#ruff--pyright--pylyzer
+  # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#pyright--ruff
   # performance benchmarks:
   # hx -v your_file.py 2> helix.log
 
@@ -28,44 +27,21 @@
     defaultEditor = true;
     package = unstable.helix;
     languages = {
-      debug-adapter = {
-        name = "python";
-        transport = "stdio";
-        command = "python";
-        args = ["-m" "debugpy" "--listen" "5678" "--wait-for-client"];
-        configurations.Python = {
-          type = "python";
-          request = "launch";
-          name = "Python Debugger";
-          program = "\${file}";
-          pythonPath = "python";
-          console = "integratedTerminal";
-          cwd = "\${workspaceFolder}";
-          env = {};
-        };
-      };
-      language-server.pylyzer = {
-        command = "pylyzer";
-        args = ["--server"];
-        config.python.settings.lint.ignore = [
-          "ANN101" # Disable attribute checks for dynamically loaded classes
-          "E501" # Ignore line length errors
-        ];
-      };
-      language-server.pyright = {
-        # command = "pyright-langserver";
-        # args = ["--stdio"];
-        config.python.analysis = {
-          autoSearchPaths = true;
-          functionReturnTypes = true;
-          typeCheckingMode = "strict";
-          useLibraryCodeForTypes = true;
-          variableTypes = true;
-        };
-        config.python.settings.lint.ignore = [
-          "ANN101" # Disable attribute checks for dynamically loaded classes
-          "E501" # Ignore line length errors
-        ];
+      language-server.basedpyright = {
+        command = "basedpyright-langserver";
+        args = ["--stdio"];
+        config = {};
+        # config.python.analysis = {
+        #   autoSearchPaths = true;
+        #   functionReturnTypes = true;
+        #   typeCheckingMode = "strict";
+        #   useLibraryCodeForTypes = true;
+        #   variableTypes = true;
+        # };
+        # config.python.settings.lint.ignore = [
+        #   "ANN101" # Disable attribute checks for dynamically loaded classes
+        #   "E501" # Ignore line length errors
+        # ];
       };
       language-server.ruff = {
         command = "ruff";
@@ -85,11 +61,11 @@
               # "D" # docstrings
             ];
             ignore = [
-              "ANN101" # Disable attribute checks for dynamically loaded classes
               "E501" # Ignore line length errors
             ];
             extend-select = ["W"]; # Add warnings
           };
+          environment = {"RUFF_TRACE" = "messages";};
           format.preview = true; # Enable experimental formatting rules
           target-version = "py313";
           per-file-ignores = {
@@ -122,22 +98,14 @@
         }
         {
           name = "python";
-          language-servers = [
-            {
-              name = "pyrigth";
-              except-features = ["format" "diagnostics"];
-            }
-            {
-              name = "ruff";
-              only-features = ["format" "diagnostics"];
-            }
-            "pylyzer"
-          ];
+          language-servers = ["ruff" "basedpyright"];
           auto-format = true;
+          file-types = ["py" "ipynb"];
           formatter = {
             command = "ruff";
             args = ["format" "-"];
           };
+          roots = ["pyproject.toml" ".git" ".venv/"];
         }
       ];
     };

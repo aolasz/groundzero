@@ -9,11 +9,10 @@
     fuse
     libressl
     mc
-    (inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.python313.withPackages (ps:
-      with ps; [
-        debugpy
-        ruff
-      ]))
+    # (inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.python313.withPackages (ps:
+    #   with ps; [
+    #     debugpy
+    #   ]))
     rsync
     uv
     wget
