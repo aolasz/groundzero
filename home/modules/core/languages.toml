@@ -1,0 +1,50 @@
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.basedpyright.settings.python.analysis]
+typeCheckingMode = "basic"
+autoSearchPaths = true
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.ruff.config.python.settings]
+lineLength = 98
+target-version = "py313"
+
+[language-server.ruff.config.python.settings.lint]
+select = ["E", "F", "C", "B", "S"]
+ignore = ["E501"]
+extend-select = ["W"]
+
+[language-server.ruff.config.python.settings.environment]
+RUFF_TRACE = "messages"
+
+[language-server.ruff.config.python.settings.format]
+preview = true
+
+[language-server.ruff.config.python.settings.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[[language]]
+name = "bash"
+auto-format = true
+language-servers = ["bash-language-server"]
+formatter = { command = "shfmt", args = ["-i", "2", "-ci"] }
+
+[[language]]
+name = "nix"
+auto-format = true
+language-servers = ["nil"]
+formatter = { command = "alejandra", args = ["-q"] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["ruff", "basedpyright"]
+file-types = ["py", "ipynb", "pyi"]
+formatter = { command = "ruff", args = ["format", "-"] }
+roots = ["pyproject.toml", "pyrightconfig.json", ".git", ".venv/"]

@@ -1,0 +1,60 @@
+theme = "gruvbox"
+
+[editor]
+bufferline = "multiple"
+color-modes = true
+cursorline = true
+end-of-line-diagnostics = "hint"
+idle-timeout = 500
+indent-heuristic = "tree-sitter"
+line-number = "relative"
+mouse = true
+rulers = [99]
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+parents = false
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "disable"
+
+[editor.lsp]
+display-messages = true
+auto-signature-help = true
+display-signature-help-docs = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
+
+[editor.whitespace]
+render = "none"
+
+[keys.normal]
+"A-f" = ":format"
+"A-w" = ":buffer-close"
+"A-x" = "extend_to_line_bounds"
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-/" = "repeat_last_motion"
+"C-c" = ":lsp-restart"
+"D"   = "kill_to_line_end"
+"X"   = "select_line_above"
+
+[keys.select]
+"A-x" = "extend_to_line_bounds"
+"X"   = "select_line_above"
