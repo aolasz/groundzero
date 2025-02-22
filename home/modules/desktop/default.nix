@@ -1,9 +1,10 @@
-{ config, lib, ... }:
-
-let
-  cfg = config.my.desktop;
-in
 {
+  config,
+  lib,
+  ...
+}: let
+  cfg = config.my.desktop;
+in {
   imports = [
     ./bemenu.nix
     ./foot.nix
@@ -43,6 +44,6 @@ in
     mpv.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
     zathura.enable = lib.mkDefault true;
-    freetube.enable = lib.mkDefault true;
+    freetube.enable = lib.mkDefault false;
   };
 }
