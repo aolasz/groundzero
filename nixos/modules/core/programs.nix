@@ -43,6 +43,12 @@
       vimAlias = true;
       defaultEditor = false;
     };
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 7d --keep 7";
+      flake = "/home/hapi/dev/groundzero";
+    };
     tmux.enable = true;
   };
 
