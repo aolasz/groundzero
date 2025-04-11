@@ -1,12 +1,12 @@
-{ lib, ... }:
+{lib, ...}: {
+  home.file.".ssh/config.d/.keep".text = "";
 
-{
   programs = {
     ssh = {
       enable = true;
       forwardAgent = true;
-      # FIXME: switch later to this new option
-      # addKeysToAgent = "yes";
+      addKeysToAgent = "yes";
+      includes = ["~/.ssh/config.d/*"];
       extraConfig = ''
         AddKeysToAgent yes
       '';
@@ -14,7 +14,7 @@
 
     keychain = {
       enable = true;
-      keys = lib.mkDefault [ "id_ed25519" ];
+      keys = lib.mkDefault ["id_ed25519"];
     };
   };
 }
