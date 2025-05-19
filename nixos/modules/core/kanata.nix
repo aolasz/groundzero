@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
-{
-  environment.systemPackages = [ pkgs.kanata ];
+{pkgs, ...}: {
+  environment.systemPackages = [pkgs.kanata];
 
   # The user must be in the "uinput" group before switching to this config;
   services.kanata = {
@@ -15,27 +13,27 @@
           caps a s d f j k l ;
         )
         (defvar
-          tap-time 150
-          hold-time 200
+          tap-time 200
+          hold-time 250
         )
 
         (defalias
-          escctrl (tap-hold 100 100 esc lctl)
-          a (tap-hold $tap-time $hold-time a lmet)
-          s (tap-hold $tap-time $hold-time s lalt)
-          d (tap-hold $tap-time $hold-time d lsft)
-          f (tap-hold $tap-time $hold-time f lctl)
-          j (tap-hold $tap-time $hold-time j rctl)
-          k (tap-hold $tap-time $hold-time k rsft)
-          l (tap-hold $tap-time $hold-time l ralt)
-          ; (tap-hold $tap-time $hold-time ; rmet)
+          escctrl (multi f24 (tap-hold 100 100 esc lctl))
+          a (multi f24 (tap-hold $tap-time $hold-time a lmet))
+          s (multi f24 (tap-hold $tap-time $hold-time s lalt))
+          d (multi f24 (tap-hold $tap-time $hold-time d lsft))
+          f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+          j (multi f24 (tap-hold $tap-time $hold-time j rctl))
+          k (multi f24 (tap-hold $tap-time $hold-time k rsft))
+          l (multi f24 (tap-hold $tap-time $hold-time l ralt))
+          ; (multi f24 (tap-hold $tap-time $hold-time ; rmet))
         )
 
         (deflayer base
           @escctrl @a @s @d @f @j @k @l @;
         )
-    '';
-    extraDefCfg = "process-unmapped-keys yes";
+      '';
+      extraDefCfg = "process-unmapped-keys yes";
     };
   };
 }
