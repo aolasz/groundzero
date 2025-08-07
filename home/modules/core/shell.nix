@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.sessionVariables.FLAKE0 = config.my.flakeURI;
 
   programs.bash = {
@@ -30,7 +32,7 @@
         # alias mc='MC_SKIN=default mc'
         alias mc='MC_SKIN=julia256 mc'
         # Force mc black & white mode
-        # alias mc='mc -b'
+        # alias mc='mc -b'/home/hapi/dev/groundzero/home/modules/core/shell.nix
       fi
     '';
   };
@@ -48,11 +50,11 @@
 
   home.packages = [
     pkgs.ripgrep
-    (pkgs.buildFHSUserEnv {
+    (pkgs.buildFHSEnv {
       name = "pixi";
       # if you want to run it in every terminal:
       # runScript = "pixi";
-      targetPkgs = pkgs: with pkgs; [ pixi ];
+      targetPkgs = pkgs: with pkgs; [pixi];
     })
   ];
 
