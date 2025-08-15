@@ -40,11 +40,11 @@ in
         fsType = "nfs";
         options = options ++ [ "rw" ];
       };
-      #"/nfs/nas/test" = {
-      #  device = "nas:/mnt/hdd_pool/data/syncthing/Obsidian Volt";
-      #  fsType = "nfs";
-      #  options = options ++ [ "rw" ];
-      #};
+      "/nfs/nas/media" = {
+        device = "nas:/mnt/hdd_pool/data/media";
+        fsType = "nfs";
+        options = options ++ [ "rw" ];
+      };
     };
 
     environment.systemPackages = [ pkgs.nfs-utils ];
