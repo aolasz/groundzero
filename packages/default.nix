@@ -14,6 +14,4 @@ in
 {
   inherit (home-manager.packages.${system}) home-manager;
   iso = isoConfig.config.system.build.isoImage;
-
-  devilutionx = pkgs.callPackage ./devilutionx.nix { };
 }
