@@ -75,6 +75,76 @@
   fileSystems = {
     "/var/log".neededForBoot = true;
     "/persist".neededForBoot = true;
+    "/mnt/Toshiba_4TB" = {
+      device = "/dev/disk/by-id/ata-TOSHIBA_HDWE140_385FKP76F58D-part2";
+      fsType = "ntfs-3g";
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=1000"
+        "dmask=022"
+        "fmask=133"
+        "nofail"
+        "noauto" # Don't auto-mount at boot
+        "x-systemd.automount" # Mount on access
+      ];
+    };
+    "/mnt/WinC" = {
+      device = "/dev/disk/by-id/ata-Samsung_SSD_860_PRO_512GB_S42YNF0M607952J-part2";
+      fsType = "ntfs-3g";
+      options = [
+        "ro"
+        "uid=1000"
+        "gid=1000"
+        "dmask=022"
+        "fmask=133"
+        "nofail"
+        "noauto" # Don't auto-mount at boot
+        "x-systemd.automount" # Mount on access
+      ];
+    };
+    "/mnt/WinD" = {
+      device = "/dev/disk/by-id/ata-WDC_WDS250G1B0A-00H9H0_170665802258-part3";
+      fsType = "ntfs-3g";
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=1000"
+        "dmask=022"
+        "fmask=133"
+        "nofail"
+        "noauto" # Don't auto-mount at boot
+        "x-systemd.automount" # Mount on access
+      ];
+    };
+    "/mnt/HDD_00" = {
+      device = "/dev/disk/by-id/ata-ST31500341AS_9VS4HE6J-part2";
+      fsType = "ntfs-3g";
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=1000"
+        "dmask=022"
+        "fmask=133"
+        "nofail"
+        "noauto" # Don't auto-mount at boot
+        "x-systemd.automount" # Mount on access
+      ];
+    };
+    "/mnt/HDD_01" = {
+      device = "/dev/disk/by-id/ata-ST31500341AS_9VS4H3ZD-part2";
+      fsType = "ntfs-3g";
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=1000"
+        "dmask=022"
+        "fmask=133"
+        "nofail"
+        "noauto" # Don't auto-mount at boot
+        "x-systemd.automount" # Mount on access
+      ];
+    };
   };
 
   swapDevices = [];
