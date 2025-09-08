@@ -1,32 +1,35 @@
 # Window manager-agnostic settings for Wayland
-
-{ config, pkgs, lib, ... }:
-
-let
-  cfg = config.my.desktop.generic;
-in
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  cfg = config.my.desktop.generic;
+in {
   options.my.desktop.generic = {
     enable = lib.mkEnableOption "generic Wayland desktop settings";
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      # Essential apps
-      firefox-wayland # Wayland-native Mozilla Firefox
-      pavucontrol # volume control GUI
-      xorg.xeyes # to check whether an app is using Xwayland :)
+    home.packages = with pkgs;
+      [
+        # Essential apps
+        firefox-wayland # Wayland-native Mozilla Firefox
+        pavucontrol # volume control GUI
+        xorg.xeyes # to check whether an app is using Xwayland :)
 
-      # Additional apps
-      ffmpeg-full # to record and convert audio and video
-      gimp # raster graphics editor
-      simple-scan # scanning utility
-      libnotify # to manually send notifications
-      pcmanfm # GUI file manager
-      remmina # remote desktop app
-      signal-desktop # instant messaging app
-      waypipe # remote connection utility to Wayland desktop
-    ] ++ (builtins.attrValues (import ./scripts.nix { inherit pkgs; }));
+        # Additional apps
+        ffmpeg-full # to record and convert audio and video
+        gimp # raster graphics editor
+        simple-scan # scanning utility
+        libnotify # to manually send notifications
+        pcmanfm # GUI file manager
+        remmina # remote desktop app
+        signal-desktop # instant messaging app
+        waypipe # remote connection utility to Wayland desktop
+      ]
+      ++ (builtins.attrValues (import ./scripts.nix {inherit pkgs;}));
 
     home.sessionVariables = {
       # Wayland-specific session variables
@@ -34,7 +37,7 @@ in
       GDK_BACKEND = "wayland";
       MOZ_ENABLE_WAYLAND = "1";
       BEMENU_BACKEND = "wayland";
-      SDL_VIDEODRIVER = "wayland";
+      SDL_VIDEODRIVER = "wayland,x11";
     };
 
     home.shellAliases = {

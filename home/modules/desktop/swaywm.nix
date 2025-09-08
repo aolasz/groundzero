@@ -1,7 +1,11 @@
-{ config, lib, pkgs, ... }:
-
-let
-  inherit (config.my.desktop.theme)
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit
+    (config.my.desktop.theme)
     cursorTheme
     termFont
     topBar
@@ -14,7 +18,7 @@ let
 
   # Python enviromnent for Sway
   swayPythonEnv = pkgs.python3.withPackages (
-    ps: with pkgs; with ps; [ i3ipc msgpack ]
+    ps: with pkgs; with ps; [i3ipc msgpack]
   );
 
   # Utilities and scripts
@@ -22,27 +26,31 @@ let
   swaymsg = "${pkgs.sway-unwrapped}/bin/swaymsg";
   swaylock = "${pkgs.swaylock}/bin/swaylock -f";
 
-  scripts = (import ./scripts.nix { inherit pkgs; }) //
-    (import ./swaywm/scripts.nix { inherit lib pkgs; });
+  scripts =
+    (import ./scripts.nix {inherit pkgs;})
+    // (import ./swaywm/scripts.nix {inherit lib pkgs;});
 
   mkCmdFunc = cmd: op: "exec ${cmd} ${op}";
 
-  screenshotCmd = mkCmdFunc
+  screenshotCmd =
+    mkCmdFunc
     "${scripts.my-sway-screenshot}/bin/my-sway-screenshot";
   volumeCmd = mkCmdFunc "${scripts.my-volume}/bin/my-volume";
   # Ignore brightness changes if controlled by hardware
   brightnessCmd = op:
     (mkCmdFunc "${scripts.my-brightness}/bin/my-brightness")
-      (if hwBrCtl then "get" else op)
-  ;
+    (
+      if hwBrCtl
+      then "get"
+      else op
+    );
 
   # Modifiers
   mod = "Mod4";
   altMod = "Mod1";
 
-  bindingModes = import ./swaywm/modes.nix { inherit config pkgs lib mod; };
-in
-{
+  bindingModes = import ./swaywm/modes.nix {inherit config pkgs lib mod;};
+in {
   options.my.desktop.swaywm = with lib; {
     enable = mkEnableOption "Sway window manager";
   };
@@ -66,7 +74,7 @@ in
       '';
       config = rec {
         fonts = {
-          names = [ termFont.name ];
+          names = [termFont.name];
           style = termFont.style;
           size = topBar.fontSize + 0.0; # Convert to float
         };
@@ -162,12 +170,11 @@ in
         floating = {
           border = 1;
           criteria = [
-            { title = "Password Required - Mozilla Firefox"; }
-            { app_id = "pavucontrol"; }
-            { class = "XEyes"; }
-            { class = "Lxappearance"; }
-            { app_id = "foot-floating"; }
-            { title = "Need For Speed"; }
+            {title = "Password Required - Mozilla Firefox";}
+            {app_id = "pavucontrol";}
+            {class = "XEyes";}
+            {class = "Lxappearance";}
+            {app_id = "foot-floating";}
           ];
           titlebar = false;
         }; # floating
@@ -188,8 +195,8 @@ in
         keybindings = lib.mkOptionDefault (
           {
             # Cancel default keybindings to not have "workspace 10"
-            "${mod}+0" = null;
-            "${mod}+Shift+0" = null;
+            #"${mod}+0" = null;
+            #"${mod}+Shift+0" = null;
 
             # Move workspaces between monitors
             "${mod}+${altMod}+${left}" = "move workspace to output left";
@@ -215,7 +222,8 @@ in
             "${mod}+Print" = screenshotCmd "screen";
             "${mod}+Shift+Print" = screenshotCmd "focused";
             "${mod}+Shift+s" = screenshotCmd "copy-area";
-          } // bindingModes.keybindings
+          }
+          // bindingModes.keybindings
         ); # keybindings
 
         # Binding modes
@@ -229,8 +237,7 @@ in
 
         seat = {
           "*" = {
-            "xcursor_theme" =
-              "${cursorTheme.name} ${toString cursorTheme.size}";
+            "xcursor_theme" = "${cursorTheme.name} ${toString cursorTheme.size}";
           };
         }; # seat
 
@@ -239,16 +246,14 @@ in
           # already running) set the variables
           # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
           {
-            command =
-              let
-                dbusCmd = "${pkgs.dbus}/bin/dbus-update-activation-environment";
-                vars = [ "DISPLAY" "WAYLAND_DISPLAY" "SWAYSOCK" ];
-                varsStr = lib.concatStringsSep " " vars;
-              in
-              ''
-                systemctl --user import-environment ${varsStr} && \
-                hash ${dbusCmd} 2>/dev/null && ${dbusCmd} --systemd ${varsStr}
-              '';
+            command = let
+              dbusCmd = "${pkgs.dbus}/bin/dbus-update-activation-environment";
+              vars = ["DISPLAY" "WAYLAND_DISPLAY" "SWAYSOCK"];
+              varsStr = lib.concatStringsSep " " vars;
+            in ''
+              systemctl --user import-environment ${varsStr} && \
+              hash ${dbusCmd} 2>/dev/null && ${dbusCmd} --systemd ${varsStr}
+            '';
           }
           {
             command = ''
@@ -269,7 +274,7 @@ in
         ];
 
         assigns = {
-          "9" = [{ app_id = "firefox"; }];
+          "9" = [{app_id = "firefox";}];
         };
 
         window = {
@@ -277,11 +282,11 @@ in
           commands = [
             {
               command = "resize set 1600px 800px";
-              criteria = { app_id = "pavucontrol"; };
+              criteria = {app_id = "pavucontrol";};
             }
             {
               command = "move position center";
-              criteria = { floating = true; };
+              criteria = {floating = true;};
             }
             {
               command = "move to workspace 8";
@@ -319,13 +324,18 @@ in
           event = "before-sleep";
           command = "${pkgs.procps}/bin/pgrep swaylock || ${swaylock}";
         }
-        { event = "lock"; command = swaylock; }
+        {
+          event = "lock";
+          command = swaylock;
+        }
       ];
     };
 
-    home.packages = with pkgs; [
-      wl-clipboard # Wayland copy & paste command-line utilities
-      swayPythonEnv
-    ] ++ (builtins.attrValues scripts);
+    home.packages = with pkgs;
+      [
+        wl-clipboard # Wayland copy & paste command-line utilities
+        swayPythonEnv
+      ]
+      ++ (builtins.attrValues scripts);
   }; # config
 }

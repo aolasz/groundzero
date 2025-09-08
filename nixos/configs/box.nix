@@ -24,6 +24,7 @@
       #brotherMfp.enable = true;
     };
     gaming.steam.enable = true;
+    gaming.heroic.enable = true;
     network = {
       interfaces = {
         wired = {wired0 = "a8:a1:59:6a:c5:5d";};
@@ -71,6 +72,101 @@
     };
   };
 
+  hardware = {
+    cpu.amd.updateMicrocode =
+      lib.mkDefault
+      config.hardware.enableRedistributableFirmware;
+    graphics = {
+      enable = true;
+      enable32Bit = true; # Critical for 32-bit Vulkan support
+      extraPackages = with pkgs; [
+        libva
+        libvdpau-va-gl
+        nvidia-vaapi-driver
+        vaapiVdpau
+        vulkan-extension-layer # Add explicit ICD packages
+        vulkan-loader
+        vulkan-tools
+        vulkan-validation-layers
+        vulkan-headers
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        libva
+        vulkan-loader
+        vulkan-validation-layers
+        vulkan-tools
+        vulkan-extension-layer
+      ];
+    };
+    nvidia = {
+      modesetting.enable = true;
+      open = false;
+      nvidiaSettings = true;
+      powerManagement.enable = true;
+      powerManagement.finegrained = false;
+      forceFullCompositionPipeline = true;
+      nvidiaPersistenced = true;
+      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/linux/nvidia-x11/default.nix
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+    }; # nvidia
+  }; # hardware
+
+  # Set comprehensive VK_ICD_FILENAMES that covers all bases
+  environment.variables = {
+    VK_ICD_FILENAMES = lib.concatStringsSep ":" [
+      # Try all possible 32- and 64-bit locations
+      # "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json"
+      "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json"
+      # "${config.hardware.nvidia.package}/share/vulkan/icd.d/nvidia_icd.json"
+      # "${config.hardware.nvidia.package}/share/vulkan/icd.d/nvidia_icd.x86_64.json"
+      # "/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd32.json"
+      "/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.i686.json"
+      # "${config.hardware.nvidia.package.lib32}/share/vulkan/icd.d/nvidia_icd32.json"
+      # "${config.hardware.nvidia.package.lib32}/share/vulkan/icd.d/nvidia_icd.i686.json"
+    ];
+  };
+
+  networking.hostName = "box";
+
+  # Load NVIDIA driver for Xorg and Wayland
+  services.xserver = {
+    videoDrivers = ["nvidia"];
+  };
+
+  services.greetd.enable = false;
+
+  services.getty.autologinUser = "hapi";
+
+  nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs.config.nvidia.acceptLicense = true;
+
+  powerManagement.cpuFreqGovernor = lib.mkDefault "schedutil";
+
+  system.activationScripts.vulkan-links = ''
+    mkdir -p /usr/lib
+    mkdir -p /usr/lib32
+    ln -sfn /run/opengl-driver/lib/libvulkan.so.1 /usr/lib/libvulkan.so.1
+    ln -sfn /run/opengl-driver/lib/libvulkan.so.1 /usr/lib32/libvulkan.so.1
+    ln -sfn ${pkgs.vulkan-loader}/lib/libvulkan.so.1 /usr/lib/libvulkan.so.1
+    ln -sfn ${pkgs.pkgsi686Linux.vulkan-loader}/lib/libvulkan.so.1 /usr/lib32/libvulkan.so.1
+  '';
+
+  # Create the ICD files with correct Steam naming
+  # Nixos provides:
+  #   nvidia_icd.x86_64.json (64-bit)
+  #   nvidia_icd.i686.json (32-bit)
+  # Steam expects:
+  #   nvidia_icd.json (64-bit)
+  #   nvidia_icd32.json (32-bit)
+  # system.activationScripts.steam-vulkan-fix = ''
+  #   if [[ -f /run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json && ! -f /run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json ]]; then
+  #     ln -sf nvidia_icd.x86_64.json /run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json
+  #   fi
+  #   if [[ -f /run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.i686.json && ! -f /run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd32.json ]]; then
+  #     ln -sf nvidia_icd.i686.json /run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd32.json
+  #   fi
+  # '';
+
   # neededForBoot flag is not settable from disko
   fileSystems = {
     "/var/log".neededForBoot = true;
@@ -89,126 +185,79 @@
         "x-systemd.automount" # Mount on access
       ];
     };
-    "/mnt/WinC" = {
-      device = "/dev/disk/by-id/ata-Samsung_SSD_860_PRO_512GB_S42YNF0M607952J-part2";
-      fsType = "ntfs-3g";
-      options = [
-        "ro"
-        "uid=1000"
-        "gid=1000"
-        "dmask=022"
-        "fmask=133"
-        "nofail"
-        "noauto" # Don't auto-mount at boot
-        "x-systemd.automount" # Mount on access
-      ];
-    };
-    "/mnt/WinD" = {
-      device = "/dev/disk/by-id/ata-WDC_WDS250G1B0A-00H9H0_170665802258-part3";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "dmask=022"
-        "fmask=133"
-        "nofail"
-        "noauto" # Don't auto-mount at boot
-        "x-systemd.automount" # Mount on access
-      ];
-    };
-    "/mnt/HDD_00" = {
-      device = "/dev/disk/by-id/ata-ST31500341AS_9VS4HE6J-part2";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "dmask=022"
-        "fmask=133"
-        "nofail"
-        "noauto" # Don't auto-mount at boot
-        "x-systemd.automount" # Mount on access
-      ];
-    };
-    "/mnt/HDD_01" = {
-      device = "/dev/disk/by-id/ata-ST31500341AS_9VS4H3ZD-part2";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "dmask=022"
-        "fmask=133"
-        "nofail"
-        "noauto" # Don't auto-mount at boot
-        "x-systemd.automount" # Mount on access
-      ];
-    };
+    # "/mnt/WinC" = {
+    #   device = "/dev/disk/by-id/ata-Samsung_SSD_860_PRO_512GB_S42YNF0M607952J-part2";
+    #   fsType = "ntfs-3g";
+    #   options = [
+    #     "ro"
+    #     "uid=1000"
+    #     "gid=1000"
+    #     "dmask=022"
+    #     "fmask=133"
+    #     "nofail"
+    #     "noauto" # Don't auto-mount at boot
+    #     "x-systemd.automount" # Mount on access
+    #   ];
+    # };
+    # "/mnt/WinD" = {
+    #   device = "/dev/disk/by-id/ata-WDC_WDS250G1B0A-00H9H0_170665802258-part3";
+    #   fsType = "ntfs-3g";
+    #   options = [
+    #     "rw"
+    #     "uid=1000"
+    #     "gid=1000"
+    #     "dmask=022"
+    #     "fmask=133"
+    #     "nofail"
+    #     "noauto" # Don't auto-mount at boot
+    #     "x-systemd.automount" # Mount on access
+    #   ];
+    # };
+    # "/mnt/WinC_old" = {
+    #   device = "ata-WDC_WDS250G1B0A-00H9H0_170665800693-part2";
+    #   fsType = "ntfs-3g";
+    #   options = [
+    #     "rw"
+    #     "uid=1000"
+    #     "gid=1000"
+    #     "dmask=022"
+    #     "fmask=133"
+    #     "nofail"
+    #     "noauto" # Don't auto-mount at boot
+    #     "x-systemd.automount" # Mount on access
+    #   ];
+    # };
+    # "/mnt/HDD_00" = {
+    #   device = "/dev/disk/by-id/ata-ST31500341AS_9VS4HE6J-part2";
+    #   fsType = "ntfs-3g";
+    #   options = [
+    #     "rw"
+    #     "uid=1000"
+    #     "gid=1000"
+    #     "dmask=022"
+    #     "fmask=133"
+    #     "nofail"
+    #     "noauto" # Don't auto-mount at boot
+    #     "x-systemd.automount" # Mount on access
+    #   ];
+    # };
+    # "/mnt/HDD_01" = {
+    #   device = "/dev/disk/by-id/ata-ST31500341AS_9VS4H3ZD-part2";
+    #   fsType = "ntfs-3g";
+    #   options = [
+    #     "rw"
+    #     "uid=1000"
+    #     "gid=1000"
+    #     "dmask=022"
+    #     "fmask=133"
+    #     "nofail"
+    #     "noauto" # Don't auto-mount at boot
+    #     "x-systemd.automount" # Mount on access
+    #   ];
+    # };
   };
 
   swapDevices = [];
-
-  hardware = {
-    cpu.amd.updateMicrocode =
-      lib.mkDefault
-      config.hardware.enableRedistributableFirmware;
-    graphics = {
-      enable = true;
-      enable32Bit = true; # Critical for 32-bit Vulkan support
-      extraPackages = with pkgs; [
-        libva
-        libvdpau-va-gl
-        # nvidia-vaapi-driver
-        vaapiVdpau
-        vulkan-extension-layer # Add explicit ICD packages
-        vulkan-loader
-        vulkan-tools
-        vulkan-validation-layers
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        libva
-        vulkan-loader
-        vulkan-validation-layers
-        vulkan-tools
-      ];
-    };
-    nvidia = {
-      modesetting.enable = true;
-      open = false;
-      nvidiaSettings = true;
-      powerManagement.enable = true;
-      powerManagement.finegrained = false;
-      forceFullCompositionPipeline = true;
-      nvidiaPersistenced = true;
-      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/linux/nvidia-x11/default.nix
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-    }; # nvidia
-  }; # hardware
-
-  networking.hostName = "box";
-
-  # Load NVIDIA driver for Xorg and Wayland
-  services.xserver = {
-    videoDrivers = ["nvidia"];
-  };
-
-  services.greetd.enable = false;
-
-  services.getty.autologinUser = "hapi";
-
-  nixpkgs.hostPlatform = "x86_64-linux";
-
-  powerManagement.cpuFreqGovernor = lib.mkDefault "schedutil";
-
-  system.activationScripts.vulkan-links = ''
-    mkdir -p /usr/lib
-    mkdir -p /usr/lib32
-    ln -sfn /run/opengl-driver/lib/libvulkan.so.1 /usr/lib/libvulkan.so.1
-    ln -sfn /run/opengl-driver/lib/libvulkan.so.1 /usr/lib32/libvulkan.so.1
-    ln -sfn ${pkgs.vulkan-loader}/lib/libvulkan.so.1 /usr/lib/libvulkan.so.1
-    ln -sfn ${pkgs.pkgsi686Linux.vulkan-loader}/lib/libvulkan.so.1 /usr/lib32/libvulkan.so.1
-  '';
 
   system.stateVersion = "24.05";
 

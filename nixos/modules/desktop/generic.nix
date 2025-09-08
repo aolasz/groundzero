@@ -1,9 +1,11 @@
-{ config, pkgs, lib, ... }:
-
-let
-  cfg = config.my.desktop.generic;
-in
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  cfg = config.my.desktop.generic;
+in {
   options.my.desktop.generic = {
     enable = lib.mkEnableOption "generic system-level desktop settings";
   };
@@ -12,10 +14,12 @@ in
     environment = {
       systemPackages = with pkgs; [
         polkit_gnome # for a Policy Kit authentication agent
+        xdg-utils # Provides xdg-settings
+        libnotify # Provides notify-send
       ];
 
       # Make applications find files in <prefix>/share
-      pathsToLink = [ "/share" "/libexec" ];
+      pathsToLink = ["/share" "/libexec"];
     };
 
     fonts.enableDefaultPackages = lib.mkDefault true;
@@ -23,7 +27,7 @@ in
     hardware.bluetooth = {
       enable = true;
       # WORKAROUND: fix bluetooth SAP (SIM Access Profile) related errors
-      disabledPlugins = [ "sap" ];
+      disabledPlugins = ["sap"];
     };
 
     security.rtkit.enable = true;
