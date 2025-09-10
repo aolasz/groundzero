@@ -3,9 +3,12 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: let
   cfg = config.my.desktop.theme;
+
+  comicCodeFonts = inputs.self.packages.${pkgs.system}.comic-code-patched;
 
   getGtkPkg = mod: let
     pkg = (builtins.getAttr mod config.gtk).package;
@@ -58,16 +61,20 @@ in {
     termFont = {
       name = lib.mkOption {
         type = lib.types.nonEmptyStr;
-        default = "Iosevka Term Nerd Font";
+        # query the actual font names in  the CLI:
+        # fc-list : family style | grep -i comic
+        default = "ComicCodeLigatures Nerd Font Mono";
+        # default = "Iosevka Term Nerd Font";
       };
 
       package = lib.mkOption {
         type = lib.types.package;
-        default = (
-          # Not all Nerd fonts are needed
-          # pkgs.nerdfonts.override { fonts = [ "IosevkaTerm" ]; }
-          pkgs.nerd-fonts.iosevka-term
-        );
+        default = comicCodeFonts;
+        # default = (
+        #   # Not all Nerd fonts are needed
+        #   # pkgs.nerdfonts.override { fonts = [ "IosevkaTerm" ]; }
+        #   pkgs.nerd-fonts.iosevka-term
+        # );
       };
 
       style = lib.mkOption {
