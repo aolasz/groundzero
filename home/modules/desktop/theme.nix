@@ -63,7 +63,8 @@ in {
         type = lib.types.nonEmptyStr;
         # query the actual font names in  the CLI:
         # fc-list : family style | grep -i comic
-        default = "ComicCodeLigatures Nerd Font Mono";
+        # default = "ComicCodeLigatures Nerd Font Mono";
+        default = "ComicCode Nerd Font Mono";
         # default = "Iosevka Term Nerd Font";
       };
 
