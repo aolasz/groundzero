@@ -5,6 +5,7 @@ let
 in
 {
   imports = [
+    ./blender.nix
     ./brother-mfp.nix
     ./generic.nix
     ./swaylock.nix

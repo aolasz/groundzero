@@ -1,7 +1,10 @@
-{ inputs, lib, pkgs, ... }:
-
 {
-  imports = [ inputs.self.homeModules.default ./user.nix ];
+  inputs,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [inputs.self.homeModules.default ./user.nix];
 
   my = {
     desktop.enable = true;
@@ -14,6 +17,7 @@
     packages = with pkgs; [
       vulkan-tools
       vulkan-loader
+      vulkan-headers
       vulkan-validation-layers
       libva-utils
       vdpauinfo
@@ -33,12 +37,11 @@
       GBM_BACKEND = "nvidia-drm";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       WLR_NO_HARDWARE_CURSORS = "1";
-       __NV_PRIME_RENDER_OFFLOAD = "1";
-      VK_ICD_FILENAMES =
-        "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
       NVK_USE_MESA_OVERLAY_LAYER = "0";
       LIBGL_ALWAYS_INDIRECT = "0";
       NVD_BACKEND = "direct";
+      # Already defined home/modules/desktop/generic.nix
+      # SDL_VIDEODRIVER = "wayland,x11"; # Allow fallback to X11
     };
     shellAliases = {
       # signal-desktop = "env -u WAYLAND_DISPLAY signal-desktop";
@@ -50,15 +53,14 @@
       export NIXOS_OZONE_WL=1
       export WLR_DRM_DEVICES=/dev/dri/card1
       export WLR_NO_HARDWARE_CURSORS=1
-      # Sway fails to start with this:
-      #export WLR_RENDERER=vulkan
       export LIBVA_DRIVER_NAME=nvidia
       export XDG_SESSION_TYPE=wayland
       export GBM_BACKEND=nvidia-drm
       export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export SDL_VIDEODRIVER=wayland,x11
     '';
 
-    extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
+    extraOptions = lib.mkAfter ["--unsupported-gpu"];
     # You can find these names by running `swaymsg -t get_outputs` in a terminal
     # when Sway is running.
     extraConfig = lib.mkAfter ''

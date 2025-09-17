@@ -62,13 +62,6 @@ let
           cmd = "${pkgs.pcmanfm}/bin/pcmanfm";
         }
       ] ++ (
-        lib.optional config.my.gaming.devilutionx.enable {
-          shortcut = "d";
-          label = "[d]evilutionx";
-          # HACK: fix SDL error
-          cmd = "SDL_VIDEODRIVER=x11 devilutionx";
-        }
-      ) ++ (
         lib.optional config.my.virtualization.enable {
           shortcut = "v";
           label = "[v]irt-manager";

@@ -1,9 +1,6 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
-    ./devilutionx.nix
-    ./diablo2.nix
+    ./heroic.nix
     ./steam.nix
     ./torchlight2.nix
   ];

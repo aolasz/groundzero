@@ -1,24 +1,29 @@
 # Desktop theme settings
-
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: let
   cfg = config.my.desktop.theme;
 
-  getGtkPkg = mod:
-    let
-      pkg = (builtins.getAttr mod config.gtk).package;
-    in
+  comicCodeFonts = inputs.self.packages.${pkgs.system}.comic-code-patched;
+
+  getGtkPkg = mod: let
+    pkg = (builtins.getAttr mod config.gtk).package;
+  in
     lib.optional (pkg != null) pkg;
 
   backgroundPkg = let
-      inherit (config.colorScheme.palette) base00 base01 base02 base03;
-      width = config.my.primaryDisplayResolution.horizontal;
-    in pkgs.stdenvNoCC.mkDerivation {
+    inherit (config.colorScheme.palette) base00 base01 base02 base03;
+    width = config.my.primaryDisplayResolution.horizontal;
+  in
+    pkgs.stdenvNoCC.mkDerivation {
       name = "my-background-image";
       src = ./hexagons.svg;
       dontUnpack = true;
-      buildInputs = [ pkgs.librsvg ];
+      buildInputs = [pkgs.librsvg];
       buildPhase = ''
         dstdir="$out/share/backgrounds"
         mkdir -p "$dstdir"
@@ -34,8 +39,7 @@ let
           --stylesheet=style.css "$src" > "$dstdir/bg.png"
       '';
     };
-in
-{
+in {
   options.my.desktop.theme = {
     enable = lib.mkEnableOption "custom desktop theme";
 
@@ -49,7 +53,7 @@ in
       };
 
       scaling = lib.mkOption {
-        type = lib.types.enum [ "stretch" "fit" "fill" "center" "tile" ];
+        type = lib.types.enum ["stretch" "fit" "fill" "center" "tile"];
         default = "tile";
       };
     }; # background
@@ -57,15 +61,21 @@ in
     termFont = {
       name = lib.mkOption {
         type = lib.types.nonEmptyStr;
-        default = "Iosevka Term Nerd Font";
+        # query the actual font names in  the CLI:
+        # fc-list : family style | grep -i comic
+        # default = "ComicCodeLigatures Nerd Font Mono";
+        default = "ComicCode Nerd Font Mono";
+        # default = "Iosevka Term Nerd Font";
       };
 
       package = lib.mkOption {
         type = lib.types.package;
-        default = (
-          # Not all Nerd fonts are needed
-          pkgs.nerdfonts.override { fonts = [ "IosevkaTerm" ]; }
-        );
+        default = comicCodeFonts;
+        # default = (
+        #   # Not all Nerd fonts are needed
+        #   # pkgs.nerdfonts.override { fonts = [ "IosevkaTerm" ]; }
+        #   pkgs.nerd-fonts.iosevka-term
+        # );
       };
 
       style = lib.mkOption {
@@ -133,11 +143,11 @@ in
               ++ (getGtkPkg "iconTheme")
               ++ (getGtkPkg "cursorTheme")
             )
-          ) + "$XDG_DATA_DIRS"
+          )
+          + "$XDG_DATA_DIRS"
         );
         # SVG loader for pixbuf (needed for GTK svg icon themes)
-        GDK_PIXBUF_MODULE_FILE =
-          "${pkgs.librsvg.out}/lib/gdk-pixbuf-2.0/*/loaders.cache";
+        GDK_PIXBUF_MODULE_FILE = "${pkgs.librsvg.out}/lib/gdk-pixbuf-2.0/*/loaders.cache";
         QT_AUTO_SCREEN_SCALE_FACTOR = 1;
         # QT_FONT_DPI = 128;
       }; # sessionVariables
@@ -165,7 +175,7 @@ in
       };
       inherit (cfg) cursorTheme;
       gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-      gtk3.bookmarks = [ ];
+      gtk3.bookmarks = [];
     };
 
     qt = {
