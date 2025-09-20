@@ -3,27 +3,29 @@
   pkgs,
   unstable,
   ...
-}: {
+}: let
+  link = config.lib.file.mkOutOfStoreSymlink;
+in {
   home.sessionVariables = {
     EDITOR = "hx";
     VISUAL = "hx";
   };
 
   home.packages = [
-    unstable.alejandra
     unstable.bash-language-server
     unstable.helix
     unstable.nil
+    unstable.nixfmt
     pkgs.basedpyright
     unstable.ruff
     unstable.shfmt
   ];
 
   xdg.configFile."helix/config.toml".source =
-    config.lib.file.mkOutOfStoreSymlink ./config.toml;
+    link "${config.my.flakeURI}/home/.config/helix/config.toml";
 
   xdg.configFile."helix/languages.toml".source =
-    config.lib.file.mkOutOfStoreSymlink ./languages.toml;
+    link "${config.my.flakeURI}/home/.config/helix/languages.toml";
 
   # source:
   # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#pyright--ruff

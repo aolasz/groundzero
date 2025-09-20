@@ -4,7 +4,7 @@ theme = "gruvbox"
 bufferline = "multiple"
 color-modes = true
 cursorline = true
-end-of-line-diagnostics = "hint"
+end-of-line-diagnostics = "disable"
 idle-timeout = 500
 indent-heuristic = "tree-sitter"
 line-number = "relative"
@@ -27,7 +27,7 @@ character = "▏"
 skip-levels = 1
 
 [editor.inline-diagnostics]
-cursor-line = "error"
+cursor-line = "hint"
 other-lines = "disable"
 
 [editor.lsp]

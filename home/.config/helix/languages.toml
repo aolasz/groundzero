@@ -11,7 +11,7 @@ command = "ruff"
 args = ["server"]
 
 [language-server.ruff.config.python.settings]
-lineLength = 98
+lineLength = 99
 target-version = "py313"
 
 [language-server.ruff.config.python.settings.lint]
@@ -38,7 +38,7 @@ formatter = { command = "shfmt", args = ["-i", "2", "-ci"] }
 name = "nix"
 auto-format = true
 language-servers = ["nil"]
-formatter = { command = "alejandra", args = ["-q"] }
+formatter = { command = "nixfmt", args = ["-q", "-w", "100"] }
 indent = { tab-width = 2, unit = "  " }
 
 [[language]]
