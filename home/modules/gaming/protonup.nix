@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.my.gaming.protonup;
@@ -10,12 +15,11 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      protonup
+      protonup-ng
     ];
 
     home.sessionVariables = {
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
-        "\${HOME}/.steam/root/compatibilitytools.d";
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
   };
 }

@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 let
   cfg = config.my.network.tailscale;
@@ -11,19 +16,24 @@ in
   config = lib.mkIf cfg.enable {
     environment.persistence."/persist" = {
       directories = [
-        { directory = "/var/lib/tailscale"; mode = "u=rwx,g=,o="; }
+        {
+          directory = "/var/lib/tailscale";
+          mode = "u=rwx,g=,o=";
+        }
       ];
     };
 
     networking = {
       # Use Tailscale MagicDNS
-      networkmanager.insertNameservers = lib.mkIf
-        config.networking.networkmanager.enable [ "100.100.100.100" ];
+      networkmanager.insertNameservers = lib.mkIf config.networking.networkmanager.enable [
+        "100.100.100.100"
+      ];
 
       firewall = {
         trustedInterfaces = [ "tailscale0" ];
         checkReversePath = "loose";
       };
+      localCommands = ''ip rule add to 192.168.31.0/24 priority 2500 lookup main'';
     };
 
     services.tailscale = {

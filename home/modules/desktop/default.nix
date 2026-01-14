@@ -2,9 +2,11 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.my.desktop;
-in {
+in
+{
   imports = [
     ./bemenu.nix
     ./foot.nix
@@ -16,6 +18,7 @@ in {
     ./mako.nix
     ./mpv.nix
     ./obsidian.nix
+    ./onlyoffice.nix
     ./swaylock.nix
     ./swaywm.nix
     ./theme.nix
@@ -43,6 +46,7 @@ in {
     libreOffice.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
+    # onlyoffice.enable = lib.mkDefault true;
     zathura.enable = lib.mkDefault true;
     freetube.enable = lib.mkDefault false;
   };

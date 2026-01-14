@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   cfg = config.my.network.shares;
@@ -6,14 +11,24 @@ let
   options = [
     "x-systemd.automount"
     "x-systemd.idle-timeout=120"
+    "x-systemd.mount-timeout=5"
     "noauto"
     "noexec"
     "user"
     "vers=4.1"
     "noatime"
+    "_netdev" # Mark as network-dependent
+    #"soft"                         # Return error instead of hanging indefinitely
+    "hard" # Keep hard mount for data integrity
+    "intr" # Allow interrupts (Ctrl+C to abort)
+    "timeo=40" # Timeout per retry: 5 seconds (in deciseconds)
+    "retrans=3" # Retry 3 times before failing
   ];
 
-  mountCommands = [ "mount.nfs4" "umount.nfs4" ];
+  mountCommands = [
+    "mount.nfs4"
+    "umount.nfs4"
+  ];
 
   mkWrapper = mountCommand: {
     source = "${pkgs.nfs-utils}/bin/${mountCommand}";
@@ -36,12 +51,14 @@ in
 
     fileSystems = {
       "/nfs/nas/obsidian" = {
-        device = "nas:/mnt/hdd_pool/data/obsidian";
+        # device = "nas:/mnt/hdd_pool/data/obsidian";
+        device = "192.168.31.159:/mnt/hdd_pool/data/obsidian";
         fsType = "nfs";
         options = options ++ [ "rw" ];
       };
       "/nfs/nas/media" = {
-        device = "nas:/mnt/hdd_pool/data/media";
+        # device = "nas:/mnt/hdd_pool/data/media";
+        device = "192.168.31.159:/mnt/hdd_pool/data/media";
         fsType = "nfs";
         options = options ++ [ "rw" ];
       };

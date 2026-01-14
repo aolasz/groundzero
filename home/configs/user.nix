@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   home = {
     username = "hapi";
     homeDirectory = "/home/hapi";

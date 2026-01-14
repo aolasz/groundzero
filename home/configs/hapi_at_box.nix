@@ -3,11 +3,24 @@
   lib,
   pkgs,
   ...
-}: {
-  imports = [inputs.self.homeModules.default ./user.nix];
+}:
+{
+  imports = [
+    inputs.self.homeModules.default
+    ./user.nix
+  ];
 
   my = {
-    desktop.enable = true;
+    desktop = {
+      enable = true;
+      onlyoffice = {
+        enable = true;
+        sharepoint.enable = true;
+        sharepoint.siteUrl = "https://furukawaelectric.sharepoint.com/sites/feti";
+        cache.maxSize = 5120; # 5 GB cache for large files
+        network.connectionTimeout = 600; # 10 minutes for slow connections
+      };
+    };
     gaming.wine.enable = true;
     gaming.lutris.enable = true;
     gaming.protonup.enable = true;
@@ -29,7 +42,7 @@
       nvtopPackages.full
       nvitop
       libGL
-      glxinfo
+      mesa-demos
     ];
     sessionVariables = {
       LIBVA_DRIVER_NAME = "nvidia";
@@ -60,7 +73,7 @@
       export SDL_VIDEODRIVER=wayland,x11
     '';
 
-    extraOptions = lib.mkAfter ["--unsupported-gpu"];
+    extraOptions = lib.mkAfter [ "--unsupported-gpu" ];
     # You can find these names by running `swaymsg -t get_outputs` in a terminal
     # when Sway is running.
     extraConfig = lib.mkAfter ''

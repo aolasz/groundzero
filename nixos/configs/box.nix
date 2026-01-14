@@ -9,7 +9,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nixpkgs.nixosModules.notDetected
     inputs.disko.nixosModules.disko
@@ -27,8 +28,12 @@
     gaming.heroic.enable = true;
     network = {
       interfaces = {
-        wired = {wired0 = "a8:a1:59:6a:c5:5d";};
-        wireless = {wireless0 = "b0:a4:60:34:6f:43";};
+        wired = {
+          wired0 = "a8:a1:59:6a:c5:5d";
+        };
+        wireless = {
+          wireless0 = "b0:a4:60:34:6f:43";
+        };
       };
       shares.enable = true;
       tailscale.enable = true;
@@ -53,7 +58,7 @@
       ];
       # kernelModules = [ "nvidia" ];
     };
-    blacklistedKernelModules = ["nouveau"];
+    blacklistedKernelModules = [ "nouveau" ];
     kernelModules = [
       "kvm-amd"
       "nvidia"
@@ -73,9 +78,7 @@
   };
 
   hardware = {
-    cpu.amd.updateMicrocode =
-      lib.mkDefault
-      config.hardware.enableRedistributableFirmware;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     graphics = {
       enable = true;
       enable32Bit = true; # Critical for 32-bit Vulkan support
@@ -83,7 +86,7 @@
         libva
         libvdpau-va-gl
         nvidia-vaapi-driver
-        vaapiVdpau
+        libva-vdpau-driver
         vulkan-extension-layer # Add explicit ICD packages
         vulkan-loader
         vulkan-tools
@@ -130,7 +133,7 @@
 
   # Load NVIDIA driver for Xorg and Wayland
   services.xserver = {
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
 
   services.greetd.enable = false;
@@ -257,7 +260,7 @@
     # };
   };
 
-  swapDevices = [];
+  swapDevices = [ ];
 
   system.stateVersion = "24.05";
 
@@ -278,7 +281,7 @@
                 mountpoint = "/boot";
                 # Fix world-accessible /boot/loader/random-seed
                 # https://github.com/nix-community/disko/issues/527#issuecomment-1924076948
-                mountOptions = ["umask=0077"];
+                mountOptions = [ "umask=0077" ];
               };
             };
             zfs = {
